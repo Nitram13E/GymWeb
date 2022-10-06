@@ -10,15 +10,18 @@
                 <a class="nav-link text-white text-decoration-none" href="clases.jsp" >Clases</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white text-decoration-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <a id="profile-user-icon" class="nav-link dropdown-toggle text-white text-decoration-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
                 </a>
-                <div class="dropdown-menu">
+                <div id="dropdown-profile" class="dropdown-menu">
                     <a class="dropdown-item" href="#">Dashboard</a>
-                    <a class="dropdown-item" href="perfil_usuario.jsp">Perfil</a>
+                    <a class="dropdown-item" href="perfil_usuario.jsp">Editar Perfil</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Salir</a>
+                    <a class="dropdown-item" href="index.jsp">Salir</a>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white text-decoration-none" href="login.jsp">Ingresar</a>
             </li>
         </ul>
     </div>

@@ -14,62 +14,54 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&display=swap" rel="stylesheet">
-        <title>GymWeb - Perfil</title>
+        <title>GymWeb - Agregar Clase</title>
     </head>
     <body>
         <jsp:include page="navbar.jsp" />
         <section class="containerProfile">
             <div class="container-profile-information">
-                <%--Logo information--%>
-                <div class="profile-logo-information">
-                    <img src="https://i.pinimg.com/originals/e4/2a/57/e42a57ad5659ea5f5b977aa0a75871f3.jpg" alt="">
-                    <div class="profile-data-user">
-                        <h1>Shifter24</h1>
-                        <p>felipeviera3224@gmail.com</p>
-                        <p>Cambiar foto de perfil</p>
-                    </div>
-                </div>
+
+                <h1 id="title_clase">Registrar Clase</h1>
 
                 <form id="profile-form" action="">
                     <%--User information Data--%>
                     <div class="user-information-data">
+
+                        <label class="btn btn-default btn-file" id="label-upload-img-clase">
+                            Subir foto <input id="upload-img-clase" name="imgClaseUpload" type="file" style="display: none;" required accept="image/png, image/gif, image/jpeg">
+                        </label>
+
+                        <div class="above-input-positioning">
+                            <label for="institucion-clase">Institucion</label>
+                            <input class="widthAuto" type="text" name="institucionClase" id="institucion-clase">
+                        </div>
+
                         <div class="flex">
+
                             <div class="above-input-positioning">
                                 <label for="name-user">Nombre</label>
                                 <input type="text" name="nameUser" id="name-user">
                             </div>
 
                             <div class="above-input-positioning">
-                                <label for="lastname-user">Apellido</label>
-                                <input type="text" name="lastnameUser" id="lastname-user">
+                                <label for="hora-clase">Hora</label>
+                                <input type="text" name="horaClase" id="hora-clase">
                             </div>
                         </div>
 
                         <div class="above-input-positioning">
-                            <label for="birth-user">Fecha de nacimiento</label>
-                            <input type="date" name="birthUser" id="birth-user">
-                        </div>
-
-                        <div class="flex">
-                            <div class="above-input-positioning">
-                                <label for="desc-user">Descripcion</label>
-                                <textarea name="descriptionUser" id="desc-user"></textarea>
-                            </div>
-
-                            <div class="above-input-positioning">
-                                <label for="bio-user">Biografia</label>
-                                <textarea name="bioUser" id="bio-user"></textarea>
-                            </div>
+                            <label for="date-class">Fecha clase</label>
+                            <input type="date" name="dateClass" id="date-class">
                         </div>
 
                         <div class="above-input-positioning">
-                            <label for="website-user">Sitio Web</label>
-                            <input type="text" name="websiteUser" id="website-user">
+                            <label for="url-clase">Url</label>
+                            <input class="widthAuto" type="text" name="urlClase" id="url-clase">
                         </div>
 
                         <div class="container-btns-profile">
-                            <button type="submit">Guardar</button>
-                            <a href="index.jsp"><button>Cancelar</button></a>
+                            <button type="submit">Registrar</button>
+                            <button><a href="index.jsp">Cancelar</a></button>
                         </div>
                     </div>
                 </form>
