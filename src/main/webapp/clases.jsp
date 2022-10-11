@@ -18,8 +18,10 @@
             </div>
 
             <div class="container-info-clase">
-                <form action="">
+                <form action="ConsultaClase" method="post">
+                    <input type="submit" value="Clickeame">
                     <div class="container-informacion-registro-clase">
+                        <h1>Clase id : ${info}</h1>
                         <h1>Informacion</h1>
                         <div class="flex">
                             <div class="above-input-positioning">

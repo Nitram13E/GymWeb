@@ -1,25 +1,26 @@
 package servlets;
 
-import Controlador.Interfaces.Fabrica;
-import Controlador.Interfaces.ICInstDeportiva;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
 import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet(name = "ConsultaActividadDeportiva", value = "/ConsultaActividadDeportiva")
-public class ConsultaActividadDeportiva extends HttpServlet {
+@WebServlet(name = "ConsultaClase", value = "/ConsultaClase")
+public class ConsultaClase extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        PrintWriter salida = response.getWriter();
 
+        salida.println(request.getContextPath());
+
+        request.setAttribute("prueba", 123);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Fabrica fabrica =Fabrica.getInstancia();
-        ICInstDeportiva icInstDeportiva = fabrica.getICInstDeportiva();
+        PrintWriter salida = response.getWriter();
 
-
+        salida.println(request.getContextPath());
     }
 }
