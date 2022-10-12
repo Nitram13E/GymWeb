@@ -19,31 +19,29 @@
 
             <div class="container-info-clase">
                 <form action="ConsultaClase" method="post">
-                    <input type="submit" value="Clickeame">
                     <div class="container-informacion-registro-clase">
-                        <h1>Clase id : ${info}</h1>
                         <h1>Informacion</h1>
                         <div class="flex">
                             <div class="above-input-positioning">
                                 <label for="nombre-clase">Nombre</label>
-                                <input id="nombre-clase" name="nombreClase" type="text">
+                                <input id="nombre-clase" name="nombreClase" type="text" value=${clase.getNombre()}>
 
                                 <label for="hora-clase">Hora</label>
-                                <input id="hora-clase" name="horaClase" type="text">
+                                <input id="hora-clase" name="horaClase" type="time" value=${clase.getHoraInicio()}>
                             </div>
 
                             <div class="above-input-positioning">
                                 <label for="fecha-registro-clase">Fecha de registro</label>
-                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="date">
+                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="date" value=${clase.getFechaReg()}>
 
                                 <label for="fecha-inicio-clase">Fecha de clase</label>
-                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="date">
+                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="date" value=${clase.getFecha()}>
                             </div>
                         </div>
 
                         <div class="above-input-positioning">
                             <label for="url-registro-clase">Url</label>
-                            <input id="url-registro-clase" name="urlRegistroClase" type="text">
+                            <input id="url-registro-clase" name="urlRegistroClase" type="text" value=${clase.getUrl()}>
                         </div>
                     </div>
 

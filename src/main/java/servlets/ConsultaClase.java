@@ -1,26 +1,43 @@
 package servlets;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import Controlador.Interfaces.Fabrica;
+import Controlador.Interfaces.ICClase;
+import Controlador.Interfaces.ICRegistro;
+import Datatypes.DtClase;
+import Logica.Registro;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet(name = "ConsultaClase", value = "/ConsultaClase")
 public class ConsultaClase extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter salida = response.getWriter();
+        Fabrica fabrica = Fabrica.getInstancia();
+        ICClase icClase = fabrica.getICClase();
+        ICRegistro icRegistro = fabrica.getICRegistro();
 
-        salida.println(request.getContextPath());
+        String nombreClase = request.getParameter("nombreClase");
+        DtClase dtClase = icClase.consultaDictado(nombreClase);
 
-        request.setAttribute("prueba", 123);
+        List<Registro> registros = icRegistro.obtenerRegistrosClase(nombreClase);
+
+
+
+        request.setAttribute("nombreClase", nombreClase);
+        request.setAttribute("clase", dtClase);
+
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/clases.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter salida = response.getWriter();
-
-        salida.println(request.getContextPath());
     }
 }
