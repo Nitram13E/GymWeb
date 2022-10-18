@@ -1,5 +1,5 @@
 
-package publicadores.PublicadorUsuario;
+package publicadores.datatypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for dtUsuarioArray complex type.
+ * <p>Java class for registroArray complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="dtUsuarioArray">
+ * &lt;complexType name="registroArray">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="item" type="{http://Publicadores/}dtUsuario" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="item" type="{http://Publicadores/}registro" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "dtUsuarioArray", propOrder = {
+@XmlType(name = "registroArray", propOrder = {
     "item"
 })
-public class DtUsuarioArray {
+public class RegistroArray {
 
     @XmlElement(nillable = true)
-    protected List<DtUsuario> item;
+    protected List<Registro> item;
 
     /**
      * Gets the value of the item property.
@@ -55,13 +55,13 @@ public class DtUsuarioArray {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link DtUsuario }
+     * {@link Registro }
      * 
      * 
      */
-    public List<DtUsuario> getItem() {
+    public List<Registro> getItem() {
         if (item == null) {
-            item = new ArrayList<DtUsuario>();
+            item = new ArrayList<Registro>();
         }
         return this.item;
     }

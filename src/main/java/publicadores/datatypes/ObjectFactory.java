@@ -1,5 +1,5 @@
 
-package publicadores.PublicadorClase;
+package publicadores.datatypes;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the publicadores.PublicadorClase package. 
+ * generated in the publicadores.publicadorRegistro package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -23,10 +23,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: publicadores.PublicadorClase
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: publicadores.publicadorRegistro
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link LocalTime }
+     * 
+     */
+    public LocalTime createLocalTime() {
+        return new LocalTime();
+    }
+
+    /**
+     * Create an instance of {@link RegistroArray }
+     * 
+     */
+    public RegistroArray createRegistroArray() {
+        return new RegistroArray();
     }
 
     /**
@@ -35,6 +51,14 @@ public class ObjectFactory {
      */
     public DtClase createDtClase() {
         return new DtClase();
+    }
+
+    /**
+     * Create an instance of {@link Registro }
+     * 
+     */
+    public Registro createRegistro() {
+        return new Registro();
     }
 
 }

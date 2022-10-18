@@ -1,5 +1,5 @@
 
-package publicadores.PublicadorClase;
+package publicadores.publicadorClase;
 
 import java.net.MalformedURLException;
 import java.net.URL;

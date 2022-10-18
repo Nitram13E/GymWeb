@@ -1,5 +1,8 @@
 
-package publicadores.PublicadorClase;
+package publicadores.publicadorClase;
+
+import publicadores.datatypes.DtClase;
+import publicadores.datatypes.ObjectFactory;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -28,7 +31,7 @@ public interface ControladorPublishClase {
      * 
      * @param arg0
      * @return
-     *     returns publicadores.PublicadorClase.DtClase
+     *     returns publicadores.DtClase
      */
     @WebMethod
     @WebResult(partName = "return")
