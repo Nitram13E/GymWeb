@@ -1,9 +1,27 @@
 package publicadores;
 
 public class PublicadorRegistro {
-    public static void main(String[] argv) {
+    public static void registrarSocioClase(DtClase dtClase, DtSocio dtSocio) throws RegistroExistenteException_Exception {
         publicadores.ControladorPublishRegistro service = new ControladorPublishRegistroService().getControladorPublishRegistroPort();
-        //invoke business method
-        service.obtenerRegistros();
+
+        service.registrarSocioClase(dtClase, dtSocio);
+    }
+
+    public static RegistroArray getRegistros() {
+        publicadores.ControladorPublishRegistro service = new ControladorPublishRegistroService().getControladorPublishRegistroPort();
+
+        return service.obtenerRegistros();
+    }
+
+    public static RegistroArray getRegistrosClase(DtClase dtClase) {
+        publicadores.ControladorPublishRegistro service = new ControladorPublishRegistroService().getControladorPublishRegistroPort();
+
+        return service.getRegistrosClase(dtClase);
+    }
+
+    public static RegistroArray getRegistrosSocio(DtSocio dtSocio) {
+        publicadores.ControladorPublishRegistro service = new ControladorPublishRegistroService().getControladorPublishRegistroPort();
+
+        return service.obtenerRegistrosSocio(dtSocio);
     }
 }

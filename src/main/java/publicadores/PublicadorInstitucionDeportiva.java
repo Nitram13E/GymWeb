@@ -1,9 +1,11 @@
 package publicadores;
 
+import java.util.List;
+
 public class PublicadorInstitucionDeportiva {
-    public static void main(String[] argv) {
+    public static DtActividadDeportivaArray getActividadesDeInstitucion(DtInstitucionDeportiva dtInstitucionDeportiva) {
         publicadores.ControladorPublishInstitucionDeportiva service = new ControladorPublishInstitucionDeportivaService().getControladorPublishInstitucionDeportivaPort();
         //invoke business method
-        service.getActividadesDeInstitucion();
+        return service.getActividadesDeInstitucion(dtInstitucionDeportiva);
     }
 }

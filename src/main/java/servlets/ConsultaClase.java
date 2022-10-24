@@ -6,12 +6,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import publicadores.datatypes.DtClase;
-import publicadores.publicadorClase.PublicadorClase;
-import publicadores.publicadorRegistro.PublicadorRegistro;
-import publicadores.datatypes.RegistroArray;
+import publicadores.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "ConsultaClase", value = "/ConsultaClase")
 public class ConsultaClase extends HttpServlet {
@@ -21,7 +19,7 @@ public class ConsultaClase extends HttpServlet {
 
         DtClase dtClase = PublicadorClase.buscarClase(nombreClase);
 
-        RegistroArray registros = PublicadorRegistro.getRegistrosClase(dtClase);
+        List<Registro> registros = PublicadorRegistro.getRegistrosClase(dtClase).getItem();
 
         request.setAttribute("nombreClase", nombreClase);
         request.setAttribute("clase", dtClase);

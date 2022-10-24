@@ -1,9 +1,17 @@
 package publicadores;
 
+import java.util.List;
+
 public class PublicadorActividadDeportiva {
-    public static void main(String[] argv) {
+    public static DtActividadDeportivaArray getActividadesDeportivas() {
         publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
-        //invoke business method
-        service.getActividadesDeportivas();
+
+        return service.getActividadesDeportivas();
+    }
+
+    public static DtClaseArray getClases(DtActividadDeportiva dtActividadDeportiva) {
+        publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
+
+        return service.getClases(dtActividadDeportiva);
     }
 }
