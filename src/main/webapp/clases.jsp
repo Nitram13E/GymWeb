@@ -17,7 +17,7 @@
         <div class="container-clases">
 
             <div class="container-title">
-                <h1>Clase de Spinning</h1>
+                <h1>Clase</h1>
             </div>
 
             <div class="container-info-clase">
@@ -27,7 +27,7 @@
                         <div class="flex">
                             <div class="above-input-positioning">
                                 <label for="nombre-clase">Nombre</label>
-                                <input id="nombre-clase" name="nombreClase" type="text" value=${clase.getNombre()}>
+                                <input id="nombre-clase" name="nombreClase" type="text" value="${clase.getNombre()}">
 
                                 <label for="hora-clase">Hora</label>
                                 <input id="hora-clase" name="horaClase" type="text" value=${clase.getHoraInicio().toString().substring(11,19)}>
