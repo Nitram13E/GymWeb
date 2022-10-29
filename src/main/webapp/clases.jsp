@@ -30,15 +30,15 @@
                                 <input id="nombre-clase" name="nombreClase" type="text" value=${clase.getNombre()}>
 
                                 <label for="hora-clase">Hora</label>
-                                <input id="hora-clase" name="horaClase" type="text" value=${clase.getHoraInicio()}>
+                                <input id="hora-clase" name="horaClase" type="text" value=${clase.getHoraInicio().toString().substring(11,19)}>
                             </div>
 
                             <div class="above-input-positioning">
                                 <label for="fecha-registro-clase">Fecha de registro</label>
-                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="text" value=${clase.getFechaReg()}>
+                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="text" value=${clase.getFechaReg().toString().substring(0,10)}>
 
                                 <label for="fecha-inicio-clase">Fecha de clase</label>
-                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="text" value=${clase.getFecha()}>
+                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="text" value=${clase.getFecha().toString().substring(0,10)}>
                             </div>
                         </div>
 
