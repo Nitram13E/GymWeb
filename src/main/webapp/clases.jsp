@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="publicadores.Registro" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -27,15 +30,15 @@
                                 <input id="nombre-clase" name="nombreClase" type="text" value=${clase.getNombre()}>
 
                                 <label for="hora-clase">Hora</label>
-                                <input id="hora-clase" name="horaClase" type="time" value=${clase.getHoraInicio()}>
+                                <input id="hora-clase" name="horaClase" type="text" value=${clase.getHoraInicio()}>
                             </div>
 
                             <div class="above-input-positioning">
                                 <label for="fecha-registro-clase">Fecha de registro</label>
-                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="date" value=${clase.getFechaReg()}>
+                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="text" value=${clase.getFechaReg()}>
 
                                 <label for="fecha-inicio-clase">Fecha de clase</label>
-                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="date" value=${clase.getFecha()}>
+                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="text" value=${clase.getFecha()}>
                             </div>
                         </div>
 
@@ -50,7 +53,10 @@
 
                         <div class="container-lista-socios">
                             <ul class="list-group">
-                                <li class="list-group-item">An item</li>
+                                <%List<Registro> registros = (List<Registro>) request.getAttribute("registros");%>
+                                <c:forEach items = "${registros}" var = "registro">
+                                    <li class="list-group-item">${registro.getSocio()}</li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>
