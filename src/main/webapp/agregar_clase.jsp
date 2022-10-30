@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: marti
-  Date: 24/9/2022
-  Time: 2:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -23,10 +16,9 @@
 
                 <h1 id="title_clase">Registrar Clase</h1>
 
-                <form id="profile-form" action="">
+                <form id="profile-form" action="AgregarClase" method="post">
                     <%--User information Data--%>
                     <div class="user-information-data">
-
                         <label class="btn btn-default btn-file" id="label-upload-img-clase">
                             Subir foto <input id="upload-img-clase" name="imgClaseUpload" type="file" style="display: none;" required accept="image/png, image/gif, image/jpeg">
                         </label>
@@ -39,19 +31,19 @@
                         <div class="flex">
 
                             <div class="above-input-positioning">
-                                <label for="name-user">Nombre</label>
-                                <input type="text" name="nameUser" id="name-user">
+                                <label for="nombre-clase">Nombre</label>
+                                <input type="text" name="nombreClase" id="nombre-clase">
                             </div>
 
                             <div class="above-input-positioning">
                                 <label for="hora-clase">Hora</label>
-                                <input type="text" name="horaClase" id="hora-clase">
+                                <input type="time" name="horaClase" id="hora-clase">
                             </div>
                         </div>
 
                         <div class="above-input-positioning">
-                            <label for="date-class">Fecha clase</label>
-                            <input type="date" name="dateClass" id="date-class">
+                            <label for="fecha-clase">Fecha clase</label>
+                            <input type="date" name="fechaClase" id="fecha-clase">
                         </div>
 
                         <div class="above-input-positioning">

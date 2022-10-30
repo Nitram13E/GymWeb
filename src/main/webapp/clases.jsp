@@ -27,24 +27,24 @@
                         <div class="flex">
                             <div class="above-input-positioning">
                                 <label for="nombre-clase">Nombre</label>
-                                <input id="nombre-clase" name="nombreClase" type="text" value="${clase.getNombre()}">
+                                <input id="nombre-clase" name="nombreClase" type="text" value="${clase.getNombre()}" disabled>
 
                                 <label for="hora-clase">Hora</label>
-                                <input id="hora-clase" name="horaClase" type="text" value=${clase.getHoraInicio().toString().substring(11,19)}>
+                                <input id="hora-clase" name="horaClase" type="text" value=${clase.getHoraInicio().toString().substring(11,19)} disabled>
                             </div>
 
                             <div class="above-input-positioning">
                                 <label for="fecha-registro-clase">Fecha de registro</label>
-                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="text" value=${clase.getFechaReg().toString().substring(0,10)}>
+                                <input id="fecha-registro-clase" name="fechaRegistroClase" type="text" value=${clase.getFechaReg().toString().substring(0,10)} disabled>
 
                                 <label for="fecha-inicio-clase">Fecha de clase</label>
-                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="text" value=${clase.getFecha().toString().substring(0,10)}>
+                                <input id="fecha-inicio-clase" name="fechaInicioClase" type="text" value=${clase.getFecha().toString().substring(0,10)} disabled>
                             </div>
                         </div>
 
                         <div class="above-input-positioning">
                             <label for="url-registro-clase">Url</label>
-                            <input id="url-registro-clase" name="urlRegistroClase" type="text" value=${clase.getUrl()}>
+                            <input id="url-registro-clase" name="urlRegistroClase" type="text" value=${clase.getUrl()} disabled>
                         </div>
                     </div>
 

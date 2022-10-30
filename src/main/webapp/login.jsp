@@ -29,7 +29,7 @@
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
                                     <a href="index.jsp"><iconify-icon style="font-size: 30px; position: absolute; right: 30px; top: 30px; color: black" icon="dashicons:arrow-left-alt2"></iconify-icon></a>
-                                    <form>
+                                    <form action="ConsultaUsuario" method="post">
                                         <div class="d-flex align-items-center mb-3 pb-1" style="justify-content: center">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                                             <svg id="logo-login" width="100%" height="124" viewBox="0 0 380 124" fill="none" xmlns="http://www.w3.org/2000/svg">
