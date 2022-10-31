@@ -1,0 +1,36 @@
+
+.home-container {
+    background-image: url("assets/AdobeStock_home.jpeg");
+    width: 100vw;
+    height: 90vh;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+aside {
+
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: inherit;
+    text-align: center;
+    justify-content: center;
+}
+
+.title-container h1 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 7rem;
+    color: #EDB97C;
+    text-shadow: 0 0 2rem red;
+}
+
+.title-container h2{
+    font-size: 6rem;
+    color: white; 
+}
+
