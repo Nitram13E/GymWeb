@@ -28,21 +28,16 @@ public class AgregarClase extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nombre = request.getParameter("nombreClase");
-
         String horaClase =  request.getParameter("horaClase");
         GregorianCalendar hora = new GregorianCalendar(1, Calendar.JANUARY,1, Integer.parseInt(horaClase.split(":")[0]), Integer.parseInt(horaClase.split(":")[1]), 0);
 
-        String fechaClase = request.getParameter("fechaClase");
-        String urlClase = request.getParameter("urlClase");
-
         DtClase dtClase = new DtClase();
         try {
-            dtClase.setNombre(nombre);
+            dtClase.setNombre(request.getParameter("nombreClase"));
             dtClase.setHoraInicio(DatatypeFactory.newInstance().newXMLGregorianCalendar(hora));
-            dtClase.setFecha(DatatypeFactory.newInstance().newXMLGregorianCalendar(fechaClase));
+            dtClase.setFecha(DatatypeFactory.newInstance().newXMLGregorianCalendar(request.getParameter("fechaClase")));
             dtClase.setFechaReg(DatatypeFactory.newInstance().newXMLGregorianCalendar(Date.from(Instant.now()).toString()));
-            dtClase.setUrl(urlClase);
+            dtClase.setUrl(request.getParameter("urlClase"));
 
             PublicadorClase.agregarClase(dtClase);
         }
