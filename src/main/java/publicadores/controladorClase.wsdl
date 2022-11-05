@@ -10,6 +10,8 @@
 </message>
 <message name="agregarClase">
 <part name="arg0" type="tns:dtClase"/>
+<part name="arg1" type="tns:dtUsuario"/>
+<part name="arg2" type="xsd:string"/>
 </message>
 <message name="agregarClaseResponse"/>
 <message name="ClaseExistenteException">
@@ -26,7 +28,7 @@
 <input wsam:Action="http://Publicadores/ControladorPublishClase/getClasesRankingRequest" message="tns:getClasesRanking"/>
 <output wsam:Action="http://Publicadores/ControladorPublishClase/getClasesRankingResponse" message="tns:getClasesRankingResponse"/>
 </operation>
-<operation name="agregarClase">
+<operation name="agregarClase" parameterOrder="arg0 arg1 arg2">
 <input wsam:Action="http://Publicadores/ControladorPublishClase/agregarClaseRequest" message="tns:agregarClase"/>
 <output wsam:Action="http://Publicadores/ControladorPublishClase/agregarClaseResponse" message="tns:agregarClaseResponse"/>
 <fault message="tns:ClaseExistenteException" name="ClaseExistenteException" wsam:Action="http://Publicadores/ControladorPublishClase/agregarClase/Fault/ClaseExistenteException"/>

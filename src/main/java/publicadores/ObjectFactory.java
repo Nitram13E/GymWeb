@@ -1,10 +1,7 @@
 
 package publicadores;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
-import javax.xml.namespace.QName;
 
 
 /**
@@ -24,7 +21,6 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _UsuarioNoExisteException_QNAME = new QName("http://Publicadores/", "UsuarioNoExisteException");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: publicadores
@@ -34,11 +30,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UsuarioNoExisteException }
+     * Create an instance of {@link DtActividadDeportivaArray }
      * 
      */
-    public UsuarioNoExisteException createUsuarioNoExisteException() {
-        return new UsuarioNoExisteException();
+    public DtActividadDeportivaArray createDtActividadDeportivaArray() {
+        return new DtActividadDeportivaArray();
     }
 
     /**
@@ -50,27 +46,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DtInstitucionDeportiva }
+     * Create an instance of {@link DtActividadDeportiva }
      * 
      */
-    public DtInstitucionDeportiva createDtInstitucionDeportiva() {
-        return new DtInstitucionDeportiva();
-    }
-
-    /**
-     * Create an instance of {@link DtProfesor }
-     * 
-     */
-    public DtProfesor createDtProfesor() {
-        return new DtProfesor();
-    }
-
-    /**
-     * Create an instance of {@link DtUsuarioArray }
-     * 
-     */
-    public DtUsuarioArray createDtUsuarioArray() {
-        return new DtUsuarioArray();
+    public DtActividadDeportiva createDtActividadDeportiva() {
+        return new DtActividadDeportiva();
     }
 
     /**
@@ -79,23 +59,6 @@ public class ObjectFactory {
      */
     public DtClase createDtClase() {
         return new DtClase();
-    }
-
-    /**
-     * Create an instance of {@link DtUsuario }
-     * 
-     */
-    public DtUsuario createDtUsuario() {
-        return new DtUsuario();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UsuarioNoExisteException }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://Publicadores/", name = "UsuarioNoExisteException")
-    public JAXBElement<UsuarioNoExisteException> createUsuarioNoExisteException(UsuarioNoExisteException value) {
-        return new JAXBElement<UsuarioNoExisteException>(_UsuarioNoExisteException_QNAME, UsuarioNoExisteException.class, null, value);
     }
 
 }

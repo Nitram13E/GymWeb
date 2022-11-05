@@ -37,6 +37,8 @@ public interface ControladorPublishClase {
 
     /**
      * 
+     * @param arg2
+     * @param arg1
      * @param arg0
      * @throws ClaseExistenteException_Exception
      */
@@ -46,7 +48,11 @@ public interface ControladorPublishClase {
     })
     public void agregarClase(
         @WebParam(name = "arg0", partName = "arg0")
-        DtClase arg0)
+        DtClase arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        DtUsuario arg1,
+        @WebParam(name = "arg2", partName = "arg2")
+        String arg2)
         throws ClaseExistenteException_Exception
     ;
 

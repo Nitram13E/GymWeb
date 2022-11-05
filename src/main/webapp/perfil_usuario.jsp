@@ -18,7 +18,14 @@
             <div class="container-profile-information">
                 <%--Logo information--%>
                 <div class="profile-logo-information">
-                    <img src="https://i.pinimg.com/originals/e4/2a/57/e42a57ad5659ea5f5b977aa0a75871f3.jpg" alt="">
+                    <c:choose>
+                        <c:when test="${sessionScope.urlFoto != null}">
+                            <img src="${sessionScope.urlFoto}" alt="img">
+                        </c:when>
+                        <c:when test="${sessionScope.urlFoto == null}">
+                            <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
+                        </c:when>
+                    </c:choose>
                     <div class="profile-data-user">
                         <h1>${sessionScope.usuario.getNickname()}</h1>
                         <p>${sessionScope.usuario.getMail()}</p>
@@ -43,7 +50,7 @@
 
                         <div class="above-input-positioning">
                             <label for="birth-user">Fecha de nacimiento</label>
-                            <input type="date" name="birthUser" id="birth-user" value="${sessionScope.usuario.getFechaNac()}">
+                            <input type="date" name="birthUser" id="birth-user" value="${sessionScope.usuario.getFechaNac().toString().substring(0,10)}">
                         </div>
                         <c:if test="${sessionScope.esProfesor}">
                             <div class="flex">

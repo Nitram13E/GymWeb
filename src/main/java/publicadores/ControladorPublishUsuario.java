@@ -66,4 +66,25 @@ public interface ControladorPublishUsuario {
     @Action(input = "http://Publicadores/ControladorPublishUsuario/getUsuariosRequest", output = "http://Publicadores/ControladorPublishUsuario/getUsuariosResponse")
     public DtUsuarioArray getUsuarios();
 
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns publicadores.DtUsuario
+     * @throws UsuarioNoExisteException_Exception
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishUsuario/loginUsuarioRequest", output = "http://Publicadores/ControladorPublishUsuario/loginUsuarioResponse", fault = {
+        @FaultAction(className = UsuarioNoExisteException_Exception.class, value = "http://Publicadores/ControladorPublishUsuario/loginUsuario/Fault/UsuarioNoExisteException")
+    })
+    public DtUsuario loginUsuario(
+        @WebParam(name = "arg0", partName = "arg0")
+        String arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        String arg1)
+        throws UsuarioNoExisteException_Exception
+    ;
+
 }

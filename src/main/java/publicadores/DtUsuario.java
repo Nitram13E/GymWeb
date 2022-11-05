@@ -45,7 +45,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "foto"
 })
 @XmlSeeAlso({
-    DtProfesor.class
+    DtSocio.class
 })
 public class DtUsuario {
 

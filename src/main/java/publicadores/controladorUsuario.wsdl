@@ -22,6 +22,13 @@
 <message name="getUsuariosResponse">
 <part name="return" type="tns:dtUsuarioArray"/>
 </message>
+<message name="loginUsuario">
+<part name="arg0" type="xsd:string"/>
+<part name="arg1" type="xsd:string"/>
+</message>
+<message name="loginUsuarioResponse">
+<part name="return" type="tns:dtUsuario"/>
+</message>
 <portType name="ControladorPublishUsuario">
 <operation name="getClasesProfesor" parameterOrder="arg0 arg1">
 <input wsam:Action="http://Publicadores/ControladorPublishUsuario/getClasesProfesorRequest" message="tns:getClasesProfesor"/>
@@ -35,6 +42,11 @@
 <operation name="getUsuarios">
 <input wsam:Action="http://Publicadores/ControladorPublishUsuario/getUsuariosRequest" message="tns:getUsuarios"/>
 <output wsam:Action="http://Publicadores/ControladorPublishUsuario/getUsuariosResponse" message="tns:getUsuariosResponse"/>
+</operation>
+<operation name="loginUsuario" parameterOrder="arg0 arg1">
+<input wsam:Action="http://Publicadores/ControladorPublishUsuario/loginUsuarioRequest" message="tns:loginUsuario"/>
+<output wsam:Action="http://Publicadores/ControladorPublishUsuario/loginUsuarioResponse" message="tns:loginUsuarioResponse"/>
+<fault message="tns:UsuarioNoExisteException" name="UsuarioNoExisteException" wsam:Action="http://Publicadores/ControladorPublishUsuario/loginUsuario/Fault/UsuarioNoExisteException"/>
 </operation>
 </portType>
 <binding name="ControladorPublishUsuarioPortBinding" type="tns:ControladorPublishUsuario">
@@ -68,6 +80,18 @@
 <output>
 <soap:body use="literal" namespace="http://Publicadores/"/>
 </output>
+</operation>
+<operation name="loginUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</input>
+<output>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</output>
+<fault name="UsuarioNoExisteException">
+<soap:fault name="UsuarioNoExisteException" use="literal"/>
+</fault>
 </operation>
 </binding>
 <service name="ControladorPublishUsuarioService">

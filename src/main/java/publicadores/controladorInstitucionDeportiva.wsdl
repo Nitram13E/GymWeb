@@ -10,15 +10,32 @@
 <message name="getActividadesDeInstitucionResponse">
 <part name="return" type="tns:dtActividadDeportivaArray"/>
 </message>
+<message name="getInstitucionesDeportivas"/>
+<message name="getInstitucionesDeportivasResponse">
+<part name="return" type="tns:dtInstitucionDeportivaArray"/>
+</message>
 <portType name="ControladorPublishInstitucionDeportiva">
 <operation name="getActividadesDeInstitucion">
 <input wsam:Action="http://Publicadores/ControladorPublishInstitucionDeportiva/getActividadesDeInstitucionRequest" message="tns:getActividadesDeInstitucion"/>
 <output wsam:Action="http://Publicadores/ControladorPublishInstitucionDeportiva/getActividadesDeInstitucionResponse" message="tns:getActividadesDeInstitucionResponse"/>
 </operation>
+<operation name="getInstitucionesDeportivas">
+<input wsam:Action="http://Publicadores/ControladorPublishInstitucionDeportiva/getInstitucionesDeportivasRequest" message="tns:getInstitucionesDeportivas"/>
+<output wsam:Action="http://Publicadores/ControladorPublishInstitucionDeportiva/getInstitucionesDeportivasResponse" message="tns:getInstitucionesDeportivasResponse"/>
+</operation>
 </portType>
 <binding name="ControladorPublishInstitucionDeportivaPortBinding" type="tns:ControladorPublishInstitucionDeportiva">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
 <operation name="getActividadesDeInstitucion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</input>
+<output>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</output>
+</operation>
+<operation name="getInstitucionesDeportivas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal" namespace="http://Publicadores/"/>

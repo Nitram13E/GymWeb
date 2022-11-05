@@ -9,6 +9,7 @@ import publicadores.UsuarioNoExisteException_Exception;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
 
 @WebServlet(name = "ModificarUsuario", value = "/ModificarUsuario")
@@ -25,8 +26,12 @@ public class ModificarUsuario extends HttpServlet {
             usuario.setNombre(request.getParameter("nameUser"));
             usuario.setApellido(request.getParameter("lastnameUser"));
             usuario.setFechaNac(DatatypeFactory.newInstance().newXMLGregorianCalendar(request.getParameter("birthUser")));
+
+            XMLGregorianCalendar calendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(request.getParameter("birthUser"));
+
             PublicadorUsuario.modificarUsuario(usuario);
-        } catch (DatatypeConfigurationException | UsuarioNoExisteException_Exception e) {
+        }
+        catch (DatatypeConfigurationException | UsuarioNoExisteException_Exception e) {
             throw new RuntimeException(e);
         }
         response.sendRedirect("index.jsp");

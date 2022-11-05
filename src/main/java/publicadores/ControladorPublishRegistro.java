@@ -50,6 +50,19 @@ public interface ControladorPublishRegistro {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns publicadores.RegistroArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse")
+    public RegistroArray getRegistrosClase(
+        @WebParam(name = "arg0", partName = "arg0")
+        DtClase arg0);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @throws RegistroExistenteException_Exception
@@ -65,18 +78,5 @@ public interface ControladorPublishRegistro {
         DtSocio arg1)
         throws RegistroExistenteException_Exception
     ;
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns publicadores.RegistroArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse")
-    public RegistroArray getRegistrosClase(
-        @WebParam(name = "arg0", partName = "arg0")
-        DtClase arg0);
 
 }

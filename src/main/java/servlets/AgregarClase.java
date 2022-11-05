@@ -5,16 +5,13 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import publicadores.ClaseExistenteException_Exception;
 import publicadores.DtClase;
-import publicadores.PublicadorActividadDeportiva;
+import publicadores.DtUsuario;
 import publicadores.PublicadorClase;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
-import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -39,7 +36,10 @@ public class AgregarClase extends HttpServlet {
             dtClase.setFechaReg(DatatypeFactory.newInstance().newXMLGregorianCalendar(Date.from(Instant.now()).toString()));
             dtClase.setUrl(request.getParameter("urlClase"));
 
-            PublicadorClase.agregarClase(dtClase);
+            DtUsuario usuario = (DtUsuario) request.getSession().getAttribute("usuario");
+            String actividadDeportiva = request.getParameter("actividadDeportiva"); //TODO: Agregar logica
+
+            PublicadorClase.agregarClase(dtClase, usuario, actividadDeportiva);
         }
         catch (DatatypeConfigurationException | ClaseExistenteException_Exception e) {
             throw new RuntimeException(e);

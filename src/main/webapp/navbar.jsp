@@ -15,14 +15,23 @@
                     </li>
                 </c:if>
                 <li class="nav-item dropdown">
-                    <a id="profile-user-icon" class="nav-link dropdown-toggle text-white text-decoration-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
+                    <a id="profile-user-icon" class="nav-link dropdown-toggle text-white text-decoration-none" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <c:choose>
+                            <c:when test="${sessionScope.urlFoto != null}">
+                                <img src="${sessionScope.urlFoto}" alt="img" width="30" height="30" class="rounded-circl">
+                            </c:when>
+                            <c:when test="${sessionScope.urlFoto == null}">
+                                <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
+                            </c:when>
+                        </c:choose>
                     </a>
-                    <div id="dropdown-profile" class="dropdown-menu">
+                    <div id="dropdown-profile" class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="#">Dashboard</a>
                         <a class="dropdown-item" href="perfil_usuario.jsp">Editar Perfil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="${sessionScope.usuario = null}">Salir</a> <!-- TODO: Mejorar -->
+                        <form action="CerrarSesion" method="post">
+                            <button class="dropdown-item" type="submit">Salir</button>
+                        </form>
                     </div>
                 </li>
             </c:if>
