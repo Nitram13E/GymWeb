@@ -43,6 +43,16 @@ public interface ControladorPublishUsuario {
 
     /**
      * 
+     * @return
+     *     returns publicadores.DtUsuarioArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishUsuario/getUsuariosRequest", output = "http://Publicadores/ControladorPublishUsuario/getUsuariosResponse")
+    public DtUsuarioArray getUsuarios();
+
+    /**
+     * 
      * @param arg0
      * @throws UsuarioNoExisteException_Exception
      */
@@ -55,16 +65,6 @@ public interface ControladorPublishUsuario {
         DtUsuario arg0)
         throws UsuarioNoExisteException_Exception
     ;
-
-    /**
-     * 
-     * @return
-     *     returns publicadores.DtUsuarioArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishUsuario/getUsuariosRequest", output = "http://Publicadores/ControladorPublishUsuario/getUsuariosResponse")
-    public DtUsuarioArray getUsuarios();
 
     /**
      * 
