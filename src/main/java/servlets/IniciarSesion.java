@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 
 @WebServlet(name = "IniciarSesion", value = "/IniciarSesion")
 public class IniciarSesion extends HttpServlet {
@@ -32,7 +33,7 @@ public class IniciarSesion extends HttpServlet {
             if(usuario instanceof DtProfesor) {
                 request.getSession().setAttribute("esProfesor", true);
             }
-            else if(usuario instanceof DtSocio){
+            else {
                 request.getSession().setAttribute("esProfesor", false);
             }
         } catch (UsuarioNoExisteException_Exception e) {

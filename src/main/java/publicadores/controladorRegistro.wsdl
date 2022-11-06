@@ -20,6 +20,18 @@
 <message name="getRegistrosClaseResponse">
 <part name="return" type="tns:registroArray"/>
 </message>
+<message name="obtenerSociosClase">
+<part name="arg0" type="tns:dtClase"/>
+</message>
+<message name="obtenerSociosClaseResponse">
+<part name="return" type="tns:dtSocioArray"/>
+</message>
+<message name="obtenerClasesSocio">
+<part name="arg0" type="tns:dtSocio"/>
+</message>
+<message name="obtenerClasesSocioResponse">
+<part name="return" type="tns:dtClaseArray"/>
+</message>
 <message name="registrarSocioClase">
 <part name="arg0" type="tns:dtClase"/>
 <part name="arg1" type="tns:dtSocio"/>
@@ -40,6 +52,14 @@
 <operation name="getRegistrosClase">
 <input wsam:Action="http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest" message="tns:getRegistrosClase"/>
 <output wsam:Action="http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse" message="tns:getRegistrosClaseResponse"/>
+</operation>
+<operation name="obtenerSociosClase">
+<input wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseRequest" message="tns:obtenerSociosClase"/>
+<output wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseResponse" message="tns:obtenerSociosClaseResponse"/>
+</operation>
+<operation name="obtenerClasesSocio">
+<input wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioRequest" message="tns:obtenerClasesSocio"/>
+<output wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioResponse" message="tns:obtenerClasesSocioResponse"/>
 </operation>
 <operation name="registrarSocioClase" parameterOrder="arg0 arg1">
 <input wsam:Action="http://Publicadores/ControladorPublishRegistro/registrarSocioClaseRequest" message="tns:registrarSocioClase"/>
@@ -68,6 +88,24 @@
 </output>
 </operation>
 <operation name="getRegistrosClase">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</input>
+<output>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</output>
+</operation>
+<operation name="obtenerSociosClase">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</input>
+<output>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</output>
+</operation>
+<operation name="obtenerClasesSocio">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal" namespace="http://Publicadores/"/>

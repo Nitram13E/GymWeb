@@ -19,9 +19,21 @@ public class PublicadorRegistro {
         return service.getRegistrosClase(dtClase);
     }
 
+    public static DtSocioArray obtenerSociosClase(DtClase dtClase) {
+        publicadores.ControladorPublishRegistro service = new ControladorPublishRegistroService().getControladorPublishRegistroPort();
+
+        return service.obtenerSociosClase(dtClase);
+    }
+
     public static RegistroArray getRegistrosSocio(DtSocio dtSocio) {
         publicadores.ControladorPublishRegistro service = new ControladorPublishRegistroService().getControladorPublishRegistroPort();
 
         return service.obtenerRegistrosSocio(dtSocio);
+    }
+
+    public static DtClaseArray obtenerClasesSocio(DtSocio dtSocio) {
+        publicadores.ControladorPublishRegistro service = new ControladorPublishRegistroService().getControladorPublishRegistroPort();
+
+        return service.obtenerClasesSocio(dtSocio);
     }
 }
