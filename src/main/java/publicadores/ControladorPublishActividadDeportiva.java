@@ -40,6 +40,16 @@ public interface ControladorPublishActividadDeportiva {
 
     /**
      * 
+     * @return
+     *     returns publicadores.DtActividadDeportivaArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasRequest", output = "http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasResponse")
+    public DtActividadDeportivaArray getActividadesDeportivas();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns publicadores.DtActividadDeportivaArray
@@ -55,15 +65,5 @@ public interface ControladorPublishActividadDeportiva {
         DtProfesor arg0)
         throws UsuarioNoExisteException_Exception
     ;
-
-    /**
-     * 
-     * @return
-     *     returns publicadores.DtActividadDeportivaArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasRequest", output = "http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasResponse")
-    public DtActividadDeportivaArray getActividadesDeportivas();
 
 }

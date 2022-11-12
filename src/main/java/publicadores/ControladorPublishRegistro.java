@@ -27,16 +27,6 @@ public interface ControladorPublishRegistro {
 
     /**
      * 
-     * @return
-     *     returns publicadores.RegistroArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosResponse")
-    public RegistroArray obtenerRegistros();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns publicadores.RegistroArray
@@ -47,6 +37,16 @@ public interface ControladorPublishRegistro {
     public RegistroArray obtenerRegistrosSocio(
         @WebParam(name = "arg0", partName = "arg0")
         DtSocio arg0);
+
+    /**
+     * 
+     * @return
+     *     returns publicadores.RegistroArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosResponse")
+    public RegistroArray obtenerRegistros();
 
     /**
      * 
@@ -83,12 +83,12 @@ public interface ControladorPublishRegistro {
      * 
      * @param arg0
      * @return
-     *     returns publicadores.RegistroArray
+     *     returns publicadores.DtSocioArray
      */
     @WebMethod
     @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse")
-    public RegistroArray getRegistrosClase(
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseResponse")
+    public DtSocioArray obtenerSociosClase(
         @WebParam(name = "arg0", partName = "arg0")
         DtClase arg0);
 
@@ -96,12 +96,12 @@ public interface ControladorPublishRegistro {
      * 
      * @param arg0
      * @return
-     *     returns publicadores.DtSocioArray
+     *     returns publicadores.RegistroArray
      */
     @WebMethod
     @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseResponse")
-    public DtSocioArray obtenerSociosClase(
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse")
+    public RegistroArray getRegistrosClase(
         @WebParam(name = "arg0", partName = "arg0")
         DtClase arg0);
 

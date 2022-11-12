@@ -23,6 +23,9 @@
 <message name="UsuarioNoExisteException">
 <part name="fault" element="tns:UsuarioNoExisteException"/>
 </message>
+<message name="ParseException">
+<part name="fault" element="tns:ParseException"/>
+</message>
 <message name="loginUsuario">
 <part name="arg0" type="xsd:string"/>
 <part name="arg1" type="xsd:string"/>
@@ -43,6 +46,7 @@
 <input wsam:Action="http://Publicadores/ControladorPublishUsuario/modificarUsuarioRequest" message="tns:modificarUsuario"/>
 <output wsam:Action="http://Publicadores/ControladorPublishUsuario/modificarUsuarioResponse" message="tns:modificarUsuarioResponse"/>
 <fault message="tns:UsuarioNoExisteException" name="UsuarioNoExisteException" wsam:Action="http://Publicadores/ControladorPublishUsuario/modificarUsuario/Fault/UsuarioNoExisteException"/>
+<fault message="tns:ParseException" name="ParseException" wsam:Action="http://Publicadores/ControladorPublishUsuario/modificarUsuario/Fault/ParseException"/>
 </operation>
 <operation name="loginUsuario" parameterOrder="arg0 arg1">
 <input wsam:Action="http://Publicadores/ControladorPublishUsuario/loginUsuarioRequest" message="tns:loginUsuario"/>
@@ -80,6 +84,9 @@
 </output>
 <fault name="UsuarioNoExisteException">
 <soap:fault name="UsuarioNoExisteException" use="literal"/>
+</fault>
+<fault name="ParseException">
+<soap:fault name="ParseException" use="literal"/>
 </fault>
 </operation>
 <operation name="loginUsuario">

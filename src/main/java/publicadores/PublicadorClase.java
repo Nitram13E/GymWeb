@@ -13,9 +13,9 @@ public class PublicadorClase {
         return service.buscarClase(nombre);
     }
 
-    public static void agregarClase(DtClase dtClase, DtUsuario usuario, String actividadDeportiva) throws ClaseExistenteException_Exception {
+    public static void agregarClase(DtClase dtClase, DtProfesor dtProfesor, DtActividadDeportiva dtActividadDeportiva, String fechaHora) throws ClaseExistenteException_Exception, ParseException_Exception {
         publicadores.ControladorPublishClase service = new ControladorPublishClaseService().getControladorPublishClasePort();
 
-        service.agregarClase(dtClase, usuario, actividadDeportiva);
+        service.agregarClase(dtClase, dtProfesor, dtActividadDeportiva, fechaHora);
     }
 }

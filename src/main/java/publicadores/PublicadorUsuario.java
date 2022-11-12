@@ -8,7 +8,7 @@ public class PublicadorUsuario {
         return service.loginUsuario(email, password);
     }
 
-    public static void modificarUsuario(DtUsuario dtUsuario, String fechaNac) throws UsuarioNoExisteException_Exception {
+    public static void modificarUsuario(DtUsuario dtUsuario, String fechaNac) throws UsuarioNoExisteException_Exception, ParseException_Exception {
         publicadores.ControladorPublishUsuario service = new ControladorPublishUsuarioService().getControladorPublishUsuarioPort();
 
         service.modificarUsuario(dtUsuario, fechaNac);

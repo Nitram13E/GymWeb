@@ -1,7 +1,5 @@
 package publicadores;
 
-import java.util.List;
-
 public class PublicadorActividadDeportiva {
     public static DtActividadDeportivaArray getActividadesDeportivas() {
         publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
