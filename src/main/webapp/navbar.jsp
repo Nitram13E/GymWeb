@@ -26,7 +26,7 @@
                         </c:choose>
                     </a>
                     <div id="dropdown-profile" class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="ConsultaUsuario">Dashboard</a>
                         <a class="dropdown-item" href="perfil_usuario.jsp">Editar Perfil</a>
                         <div class="dropdown-divider"></div>
                         <form action="CerrarSesion" method="post">

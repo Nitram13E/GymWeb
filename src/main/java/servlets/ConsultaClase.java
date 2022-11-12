@@ -16,6 +16,7 @@ public class ConsultaClase extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombreClase = request.getParameter("nombreClase");
+        if(nombreClase == null) response.sendRedirect("index.jsp");
 
         DtClase dtClase = PublicadorClase.buscarClase(nombreClase);
 
