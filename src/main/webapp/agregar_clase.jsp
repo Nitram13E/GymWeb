@@ -61,6 +61,6 @@
             </div>
         </section>
 <%--        <jsp:include page="footer.jsp"/>--%>
-        <script src="app.js"></script>
+        <script src="JS/app.js"></script>
     </body>
 </html>

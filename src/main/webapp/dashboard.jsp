@@ -16,7 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles/dashboard.css">
-
+    <!-- Link to the file hosted on your server, -->
+    <link rel="stylesheet" href="JS/splide-4.1.3/dist/css/splide.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,83 +56,86 @@
     </aside>
     <main class="main-container">
         <div class="container-actividades"> <!--CONTAINER ACTIVIDADES-->
-            <c:if test="${sessionScope.esProfesor == true}">
-                <div id="carousel-Actividades" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel-Actividades" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carousel-Actividades" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carousel-Actividades" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
-                            </div>
+            <h1 class="title_primary_carousel">Actividades Deportivas</h1>
+            <section id="carousel-Actividades" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <div class="splide__slide">
+                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                            <h2 class="title_slider">Slide 1</h2>
+                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
-                            </div>
+                        <div class="splide__slide">
+                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                            <h2 class="title_slider">Slide 2</h2>
+                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
                         </div>
-                        <div class="carousel-item">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
+                        <div class="splide__slide">
+                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                            <h2 class="title_slider">Slide 3</h2>
+                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
                         </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-Actividades" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-Actividades" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    </ul>
                 </div>
-            </c:if>
+            </section>
         </div>
         <div class="container-clases"> <!--CONTAINER CLASES-->
-            <div id="carouselClases" class="carousel slide" data-bs-ride="false">
-                <div class="carousel-indicators">
-                    <%List<DtClase> clasesSocio = (List<DtClase>) request.getAttribute("clasesSocio");%>
-                    <c:forEach var = "i" begin="0" end="${clasesSocio.size() - 1}">
-                        <button type="button" data-bs-target="#carouselClases" data-bs-slide-to="${i}" aria-label="Slide ${i+1}" <c:if test="${i == 0}">class="active"</c:if>></button>
-                    </c:forEach>
+            <h1 class="title_primary_carousel">Clases</h1>
+            <section id="carousel-Clases" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <div class="splide__slide">
+                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                            <h2 class="title_slider">Slide 1</h2>
+                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
+                        </div>
+                        <div class="splide__slide">
+                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                            <h2 class="title_slider">Slide 2</h2>
+                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
+                        </div>
+                        <div class="splide__slide">
+                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                            <h2 class="title_slider">Slide 3</h2>
+                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
+                        </div>
+                    </ul>
                 </div>
-                <div class="carousel-inner">
-                    <c:forEach items = "${clasesSocio}" var = "clase">
-                        <a href="ConsultaClase?nombreClase=${clase.getNombre()}">
-                            <div class="carousel-item active">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>${clase.getNombre()}</h5>
-                                    <p>${clase.getUrl()}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </c:forEach>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselClases" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselClases" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            </section>
+        </div>
     </main>
-    <footer>
-    </footer>
 </div>
-</body>
-<script src="app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<%--Splide library--%>
+<script src="JS/splide-4.1.3/dist/js/splide.min.js"></script>
 
+<script>
+    const splideAct = new Splide( '#carousel-Actividades', {
+        type   : 'loop',
+        drag   : 'free',
+        focus  : 'center',
+        snap: true,
+        perPage: 3,
+        autoScroll: {
+            speed: 1,
+        },
+    } );
+
+    const splideClases = new Splide( '#carousel-Clases', {
+        type   : 'loop',
+        drag   : 'free',
+        focus  : 'center',
+        snap: true,
+        perPage: 3,
+        autoScroll: {
+            speed: 1,
+        },
+    } );
+
+    splideAct.mount();
+    splideClases.mount();
+</script>
+
+<script src="JS/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
 </html>
