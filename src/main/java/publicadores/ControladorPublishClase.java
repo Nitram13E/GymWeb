@@ -37,19 +37,6 @@ public interface ControladorPublishClase {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns publicadores.DtClase
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishClase/buscarClaseRequest", output = "http://Publicadores/ControladorPublishClase/buscarClaseResponse")
-    public DtClase buscarClase(
-        @WebParam(name = "arg0", partName = "arg0")
-        String arg0);
-
-    /**
-     * 
      * @param arg2
      * @param arg1
      * @param arg0
@@ -68,5 +55,18 @@ public interface ControladorPublishClase {
         String arg2)
         throws ClaseExistenteException_Exception
     ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns publicadores.DtClase
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishClase/buscarClaseRequest", output = "http://Publicadores/ControladorPublishClase/buscarClaseResponse")
+    public DtClase buscarClase(
+        @WebParam(name = "arg0", partName = "arg0")
+        String arg0);
 
 }

@@ -17,6 +17,7 @@
 </message>
 <message name="modificarUsuario">
 <part name="arg0" type="tns:dtUsuario"/>
+<part name="arg1" type="xsd:string"/>
 </message>
 <message name="modificarUsuarioResponse"/>
 <message name="UsuarioNoExisteException">
@@ -38,7 +39,7 @@
 <input wsam:Action="http://Publicadores/ControladorPublishUsuario/getUsuariosRequest" message="tns:getUsuarios"/>
 <output wsam:Action="http://Publicadores/ControladorPublishUsuario/getUsuariosResponse" message="tns:getUsuariosResponse"/>
 </operation>
-<operation name="modificarUsuario">
+<operation name="modificarUsuario" parameterOrder="arg0 arg1">
 <input wsam:Action="http://Publicadores/ControladorPublishUsuario/modificarUsuarioRequest" message="tns:modificarUsuario"/>
 <output wsam:Action="http://Publicadores/ControladorPublishUsuario/modificarUsuarioResponse" message="tns:modificarUsuarioResponse"/>
 <fault message="tns:UsuarioNoExisteException" name="UsuarioNoExisteException" wsam:Action="http://Publicadores/ControladorPublishUsuario/modificarUsuario/Fault/UsuarioNoExisteException"/>

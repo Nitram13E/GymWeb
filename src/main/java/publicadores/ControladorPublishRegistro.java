@@ -50,6 +50,37 @@ public interface ControladorPublishRegistro {
 
     /**
      * 
+     * @param arg1
+     * @param arg0
+     * @throws RegistroExistenteException_Exception
+     */
+    @WebMethod
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/registrarSocioClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/registrarSocioClaseResponse", fault = {
+        @FaultAction(className = RegistroExistenteException_Exception.class, value = "http://Publicadores/ControladorPublishRegistro/registrarSocioClase/Fault/RegistroExistenteException")
+    })
+    public void registrarSocioClase(
+        @WebParam(name = "arg0", partName = "arg0")
+        DtClase arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        DtSocio arg1)
+        throws RegistroExistenteException_Exception
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns publicadores.DtClaseArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioResponse")
+    public DtClaseArray obtenerClasesSocio(
+        @WebParam(name = "arg0", partName = "arg0")
+        DtSocio arg0);
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns publicadores.RegistroArray
@@ -73,36 +104,5 @@ public interface ControladorPublishRegistro {
     public DtSocioArray obtenerSociosClase(
         @WebParam(name = "arg0", partName = "arg0")
         DtClase arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns publicadores.DtClaseArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioResponse")
-    public DtClaseArray obtenerClasesSocio(
-        @WebParam(name = "arg0", partName = "arg0")
-        DtSocio arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @throws RegistroExistenteException_Exception
-     */
-    @WebMethod
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/registrarSocioClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/registrarSocioClaseResponse", fault = {
-        @FaultAction(className = RegistroExistenteException_Exception.class, value = "http://Publicadores/ControladorPublishRegistro/registrarSocioClase/Fault/RegistroExistenteException")
-    })
-    public void registrarSocioClase(
-        @WebParam(name = "arg0", partName = "arg0")
-        DtClase arg0,
-        @WebParam(name = "arg1", partName = "arg1")
-        DtSocio arg1)
-        throws RegistroExistenteException_Exception
-    ;
 
 }

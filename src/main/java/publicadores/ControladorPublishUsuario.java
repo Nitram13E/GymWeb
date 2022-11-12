@@ -53,6 +53,7 @@ public interface ControladorPublishUsuario {
 
     /**
      * 
+     * @param arg1
      * @param arg0
      * @throws UsuarioNoExisteException_Exception
      */
@@ -62,7 +63,9 @@ public interface ControladorPublishUsuario {
     })
     public void modificarUsuario(
         @WebParam(name = "arg0", partName = "arg0")
-        DtUsuario arg0)
+        DtUsuario arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        String arg1)
         throws UsuarioNoExisteException_Exception
     ;
 

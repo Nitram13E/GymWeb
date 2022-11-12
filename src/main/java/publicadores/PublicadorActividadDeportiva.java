@@ -14,4 +14,10 @@ public class PublicadorActividadDeportiva {
 
         return service.getClases(dtActividadDeportiva);
     }
+
+    public DtActividadDeportivaArray getActividadesDeportivasProfesor(DtProfesor dtProfesor) throws UsuarioNoExisteException_Exception {
+        publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
+
+        return service.getActividadesDeportivasProfesor(dtProfesor);
+    }
 }
