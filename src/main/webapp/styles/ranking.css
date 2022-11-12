@@ -50,6 +50,12 @@ body {
     margin: 0px !important;
     padding: 0px !important;
     display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.navbar{
+ width: 100vw;   
 }
 
 main {
