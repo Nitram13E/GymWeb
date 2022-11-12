@@ -3,15 +3,15 @@ package servlets;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import publicadores.ClaseExistenteException_Exception;
-import publicadores.DtClase;
-import publicadores.DtUsuario;
-import publicadores.PublicadorClase;
+import publicadores.*;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.io.IOException;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneOffset;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -25,23 +25,27 @@ public class AgregarClase extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String horaClase =  request.getParameter("horaClase");
-        GregorianCalendar hora = new GregorianCalendar(1, Calendar.JANUARY,1, Integer.parseInt(horaClase.split(":")[0]), Integer.parseInt(horaClase.split(":")[1]), 0);
-
         DtClase dtClase = new DtClase();
         try {
+            XMLGregorianCalendar fecha = DatatypeFactory.newInstance().newXMLGregorianCalendar(request.getParameter("fechaClase"));
+
+            String[] hora =  request.getParameter("horaClase").split(":");
+            fecha.setTime(Integer.parseInt(hora[0]), Integer.parseInt(hora[1]), 0);
+
             dtClase.setNombre(request.getParameter("nombreClase"));
-            dtClase.setHoraInicio(DatatypeFactory.newInstance().newXMLGregorianCalendar(hora));
-            dtClase.setFecha(DatatypeFactory.newInstance().newXMLGregorianCalendar(request.getParameter("fechaClase")));
-            dtClase.setFechaReg(DatatypeFactory.newInstance().newXMLGregorianCalendar(Date.from(Instant.now()).toString()));
+            dtClase.setHoraInicio(fecha);
+            dtClase.setFecha(fecha);
+            dtClase.setFechaReg(DatatypeFactory.newInstance().newXMLGregorianCalendar(LocalDate.now(ZoneOffset.UTC).toString()));
             dtClase.setUrl(request.getParameter("urlClase"));
 
-            DtUsuario usuario = (DtUsuario) request.getSession().getAttribute("usuario");
-            String actividadDeportiva = request.getParameter("actividadDeportiva"); //TODO: Agregar logica
+            DtProfesor dtProfesor = (DtProfesor) request.getSession().getAttribute("usuario");
+            DtActividadDeportiva dtActividadDeportiva = (DtActividadDeportiva) request.getSession().getAttribute("actividadDeportiva"); //TODO: Agregar logica en JSP actividadDepotiva
 
-            PublicadorClase.agregarClase(dtClase, usuario, actividadDeportiva);
+            PublicadorClase.agregarClase(dtClase, dtProfesor, dtActividadDeportiva, fecha.toString());
         }
         catch (DatatypeConfigurationException | ClaseExistenteException_Exception e) {
+            throw new RuntimeException(e);
+        } catch (ParseException_Exception e) {
             throw new RuntimeException(e);
         }
     }

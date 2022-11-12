@@ -53,17 +53,22 @@ public interface ControladorPublishUsuario {
 
     /**
      * 
+     * @param arg1
      * @param arg0
      * @throws UsuarioNoExisteException_Exception
+     * @throws ParseException_Exception
      */
     @WebMethod
     @Action(input = "http://Publicadores/ControladorPublishUsuario/modificarUsuarioRequest", output = "http://Publicadores/ControladorPublishUsuario/modificarUsuarioResponse", fault = {
-        @FaultAction(className = UsuarioNoExisteException_Exception.class, value = "http://Publicadores/ControladorPublishUsuario/modificarUsuario/Fault/UsuarioNoExisteException")
+        @FaultAction(className = UsuarioNoExisteException_Exception.class, value = "http://Publicadores/ControladorPublishUsuario/modificarUsuario/Fault/UsuarioNoExisteException"),
+        @FaultAction(className = ParseException_Exception.class, value = "http://Publicadores/ControladorPublishUsuario/modificarUsuario/Fault/ParseException")
     })
     public void modificarUsuario(
         @WebParam(name = "arg0", partName = "arg0")
-        DtUsuario arg0)
-        throws UsuarioNoExisteException_Exception
+        DtUsuario arg0,
+        @WebParam(name = "arg1", partName = "arg1")
+        String arg1)
+        throws ParseException_Exception, UsuarioNoExisteException_Exception
     ;
 
     /**

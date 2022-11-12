@@ -50,23 +50,28 @@ public interface ControladorPublishClase {
 
     /**
      * 
+     * @param arg3
      * @param arg2
      * @param arg1
      * @param arg0
+     * @throws ParseException_Exception
      * @throws ClaseExistenteException_Exception
      */
     @WebMethod
     @Action(input = "http://Publicadores/ControladorPublishClase/agregarClaseRequest", output = "http://Publicadores/ControladorPublishClase/agregarClaseResponse", fault = {
-        @FaultAction(className = ClaseExistenteException_Exception.class, value = "http://Publicadores/ControladorPublishClase/agregarClase/Fault/ClaseExistenteException")
+        @FaultAction(className = ClaseExistenteException_Exception.class, value = "http://Publicadores/ControladorPublishClase/agregarClase/Fault/ClaseExistenteException"),
+        @FaultAction(className = ParseException_Exception.class, value = "http://Publicadores/ControladorPublishClase/agregarClase/Fault/ParseException")
     })
     public void agregarClase(
         @WebParam(name = "arg0", partName = "arg0")
         DtClase arg0,
         @WebParam(name = "arg1", partName = "arg1")
-        DtUsuario arg1,
+        DtProfesor arg1,
         @WebParam(name = "arg2", partName = "arg2")
-        String arg2)
-        throws ClaseExistenteException_Exception
+        DtActividadDeportiva arg2,
+        @WebParam(name = "arg3", partName = "arg3")
+        String arg3)
+        throws ClaseExistenteException_Exception, ParseException_Exception
     ;
 
 }

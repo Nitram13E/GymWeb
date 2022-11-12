@@ -19,13 +19,9 @@
                 <form id="profile-form" action="AgregarClase" method="post">
                     <%--User information Data--%>
                     <div class="user-information-data">
-                        <label class="btn btn-default btn-file" id="label-upload-img-clase">
-                            Subir foto <input id="upload-img-clase" name="imgClaseUpload" type="file" style="display: none;" required accept="image/png, image/gif, image/jpeg">
-                        </label>
-
                         <div class="above-input-positioning">
                             <label for="institucion-clase">Institucion</label>
-                            <input class="widthAuto" type="text" name="institucionClase" id="institucion-clase">
+                            <input class="widthAuto" type="text" name="institucionClase" id="institucion-clase" value="${sessionScope.usuario.getInstitucion().getNombre()}" disabled>
                         </div>
 
                         <div class="flex">
