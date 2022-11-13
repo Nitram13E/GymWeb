@@ -183,6 +183,11 @@ body
     height: 40px;
 }
 
+.img-circle
+{
+    border-radius: 50%;
+}
+
 @media screen and (max-width: 600px)
 {
     .flex

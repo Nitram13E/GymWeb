@@ -18,10 +18,10 @@
                     <a id="profile-user-icon" class="nav-link dropdown-toggle text-white text-decoration-none" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <c:choose>
                             <c:when test="${sessionScope.urlFoto != null}">
-                                <img src="${sessionScope.urlFoto}" alt="img" width="30" height="30" class="rounded-circl">
+                                <img src="${sessionScope.urlFoto}" alt="img" width="30" height="30" class="img-circle">
                             </c:when>
                             <c:when test="${sessionScope.urlFoto == null}">
-                                <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
+                                <img src="profile-icon.png" width="30" height="30" class="img-circle">
                             </c:when>
                         </c:choose>
                     </a>
