@@ -7,6 +7,7 @@ import publicadores.*;
 
 import java.io.IOException;
 import java.time.Clock;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ConsultaUsuario", value = "/ConsultaUsuario")
@@ -20,19 +21,23 @@ public class ConsultaUsuario extends HttpServlet {
         //Si es profesor traemos las actividades y las clases asociadas a esa actividad
         if(esProfesor)
         {
-//            DtProfesor profesor = (DtProfesor) usuario;
-//
-//            //Traer clases sistema
-//            List<DtClase> clases = PublicadorClase.getClasesRanking().getItem();
-//
-//            //Filtrar esas clases por las que tiene el profesor
-//            DtClaseArray array = new DtClaseArray();
-//            array.getItem().addAll(clases);
-//
-//            List<DtClase> clasesProfesor = PublicadorUsuario.getClasesProfesor(array, profesor).getItem();
-//
-//            PublicadorActividadDeportiva.getClases()
-//            request.setAttribute("infoUsuario", profesor);
+            try {
+                DtProfesor profesor = (DtProfesor) usuario;
+
+                //Traer actividades del profesor que esta logueado
+                List<DtActividadDeportiva> actividadesProfesor = PublicadorActividadDeportiva.getActividadesDeportivasProfesor(profesor).getItem();
+
+                //Traer las clases de cada actividad deportiva
+
+                //Set info profesor to front end
+                request.setAttribute("infoUsuario", profesor);
+                //Set actividades to show in carousel
+                request.setAttribute("actividadesProfesor", actividadesProfesor);
+
+            } catch (UsuarioNoExisteException_Exception e) {
+
+                throw new RuntimeException(e);
+            }
 
         }
         //Si es socio entonces traemos las clases a las que se registro
