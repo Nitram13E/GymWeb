@@ -16,11 +16,9 @@
     <body>
         <jsp:include page="navbar.jsp" />
         <div class="container-clases">
-
             <div class="container-title">
                 <h1>Clase</h1>
             </div>
-
             <div class="container-info-clase">
                 <form action="ConsultaClase" method="post">
                     <div class="container-informacion-registro-clase">
@@ -51,7 +49,6 @@
 
                     <div>
                         <h1>Socios</h1>
-
                         <div class="container-lista-socios">
                             <ul class="list-group">
                                 <jsp:useBean id="registros" scope="request" type="java.util.List"/>

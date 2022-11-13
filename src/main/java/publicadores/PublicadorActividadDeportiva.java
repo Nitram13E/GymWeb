@@ -18,4 +18,16 @@ public class PublicadorActividadDeportiva {
 
         return service.getActividadesDeportivasProfesor(dtProfesor);
     }
+
+    public static DtActividadDeportiva buscarActividadDeportiva(String nombre) {
+        publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
+
+        return service.buscarActividadDeportiva(nombre);
+    }
+
+    public static DtActividadDeportivaArray getActividadesRanking() {
+        publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
+
+        return service.getActividadesRanking();
+    }
 }

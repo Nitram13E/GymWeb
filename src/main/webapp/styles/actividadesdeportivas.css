@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;600;700&family=Quicksand:wght@300;500;700&display=swap');
 
-* {
-    border: 0;
-    padding: 0;
+*
+{
     margin: 0;
-    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    box-sizing: border-box !important;
+    color: white;
+    font-family: Montserrat, sans-serif;
 }
 
 html, body {
@@ -12,8 +14,24 @@ html, body {
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+textarea
+{
+    background: black;
+}
+
+input
+{
+    background: black;
+}
+
+.widthAuto
+{
+    width: auto !important;
 }
 
 .form-floating input {
@@ -57,6 +75,108 @@ body {
     color: white;
     border-bottom: 1px solid white;
 }
+.disabled
+{
+    display: none;
+}
+
+.container-profile-information input
+{
+    width: 240px;
+    text-align: center;
+    height: 40px;
+    background: black;
+    color: white;
+    padding: 10px 4px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.container-profile-information textarea
+{
+    width: 240px;
+    height: 80px;
+    resize: none;
+    background: black;
+    color: white;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.container-profile-information label
+{
+    margin-top: 40px;
+}
+
+.above-input-positioning
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.container-lista-actividades
+{
+    width: 300px;
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.container-info-actividades
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 10%;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    margin: 0 10%;
+}
+
+.container-activiades
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.flex
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+.container-info-actividad input
+{
+    width: 240px;
+    text-align: center;
+    height: 40px;
+    background: black;
+    color: white;
+    padding: 10px 4px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.container-info-actividad textarea
+{
+    width: 240px;
+    height: 80px;
+    resize: none;
+    background: black;
+    color: white;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid white;
+}
 
 main {
     width: 100vw;
@@ -64,7 +184,7 @@ main {
     display: flex;
     flex-direction: row;
     color: white;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(0, 0, 0);
 }
     .searchAndSelect {
         display: flex;
@@ -75,8 +195,6 @@ main {
         height: 79vh;
         padding: 2rem;
         margin-left: 12vw;
-        border: solid red 1px;
-        background-color: #070707;
     }
         .searchAndSelect input {
             width: 16vw;

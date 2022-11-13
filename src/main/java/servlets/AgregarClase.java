@@ -39,13 +39,11 @@ public class AgregarClase extends HttpServlet {
             dtClase.setUrl(request.getParameter("urlClase"));
 
             DtProfesor dtProfesor = (DtProfesor) request.getSession().getAttribute("usuario");
-            DtActividadDeportiva dtActividadDeportiva = (DtActividadDeportiva) request.getSession().getAttribute("actividadDeportiva"); //TODO: Agregar logica en JSP actividadDepotiva
+            DtActividadDeportiva dtActividadDeportiva = PublicadorActividadDeportiva.buscarActividadDeportiva(request.getSession().getAttribute("actividadDeportiva").toString());
 
             PublicadorClase.agregarClase(dtClase, dtProfesor, dtActividadDeportiva, fecha.toString());
         }
-        catch (DatatypeConfigurationException | ClaseExistenteException_Exception e) {
-            throw new RuntimeException(e);
-        } catch (ParseException_Exception e) {
+        catch (DatatypeConfigurationException | ClaseExistenteException_Exception | ParseException_Exception e) {
             throw new RuntimeException(e);
         }
     }

@@ -22,12 +22,6 @@
 <message name="RegistroExistenteException">
 <part name="fault" element="tns:RegistroExistenteException"/>
 </message>
-<message name="obtenerClasesSocio">
-<part name="arg0" type="tns:dtSocio"/>
-</message>
-<message name="obtenerClasesSocioResponse">
-<part name="return" type="tns:dtClaseArray"/>
-</message>
 <message name="obtenerSociosClase">
 <part name="arg0" type="tns:dtClase"/>
 </message>
@@ -39,6 +33,12 @@
 </message>
 <message name="getRegistrosClaseResponse">
 <part name="return" type="tns:registroArray"/>
+</message>
+<message name="obtenerClasesSocio">
+<part name="arg0" type="tns:dtSocio"/>
+</message>
+<message name="obtenerClasesSocioResponse">
+<part name="return" type="tns:dtClaseArray"/>
 </message>
 <portType name="ControladorPublishRegistro">
 <operation name="obtenerRegistrosSocio">
@@ -54,10 +54,6 @@
 <output wsam:Action="http://Publicadores/ControladorPublishRegistro/registrarSocioClaseResponse" message="tns:registrarSocioClaseResponse"/>
 <fault message="tns:RegistroExistenteException" name="RegistroExistenteException" wsam:Action="http://Publicadores/ControladorPublishRegistro/registrarSocioClase/Fault/RegistroExistenteException"/>
 </operation>
-<operation name="obtenerClasesSocio">
-<input wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioRequest" message="tns:obtenerClasesSocio"/>
-<output wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioResponse" message="tns:obtenerClasesSocioResponse"/>
-</operation>
 <operation name="obtenerSociosClase">
 <input wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseRequest" message="tns:obtenerSociosClase"/>
 <output wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseResponse" message="tns:obtenerSociosClaseResponse"/>
@@ -65,6 +61,10 @@
 <operation name="getRegistrosClase">
 <input wsam:Action="http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest" message="tns:getRegistrosClase"/>
 <output wsam:Action="http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse" message="tns:getRegistrosClaseResponse"/>
+</operation>
+<operation name="obtenerClasesSocio">
+<input wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioRequest" message="tns:obtenerClasesSocio"/>
+<output wsam:Action="http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioResponse" message="tns:obtenerClasesSocioResponse"/>
 </operation>
 </portType>
 <binding name="ControladorPublishRegistroPortBinding" type="tns:ControladorPublishRegistro">
@@ -99,15 +99,6 @@
 <soap:fault name="RegistroExistenteException" use="literal"/>
 </fault>
 </operation>
-<operation name="obtenerClasesSocio">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal" namespace="http://Publicadores/"/>
-</input>
-<output>
-<soap:body use="literal" namespace="http://Publicadores/"/>
-</output>
-</operation>
 <operation name="obtenerSociosClase">
 <soap:operation soapAction=""/>
 <input>
@@ -118,6 +109,15 @@
 </output>
 </operation>
 <operation name="getRegistrosClase">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</input>
+<output>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</output>
+</operation>
+<operation name="obtenerClasesSocio">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal" namespace="http://Publicadores/"/>
