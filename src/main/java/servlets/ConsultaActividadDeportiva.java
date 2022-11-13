@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import publicadores.DtActividadDeportiva;
+import publicadores.PublicadorActividadDeportiva;
 
 import java.io.IOException;
 
@@ -17,6 +19,6 @@ public class ConsultaActividadDeportiva extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        DtActividadDeportiva actividad = (DtActividadDeportiva) request.getAttribute("actividad");
     }
 }

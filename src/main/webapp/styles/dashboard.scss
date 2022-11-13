@@ -115,7 +115,7 @@ main {
   background-color: rgb(20, 20, 20);
 }
 
-/*Splide JS*/
+/*-----------Splide JS-----------------*/
 
 .splide
 {
@@ -126,6 +126,7 @@ main {
 
 .splide__slide
 {
+  text-align: center;
   padding: 10px;
 }
 
@@ -149,8 +150,10 @@ main {
 
 .description_slider
 {
-  height: 80px;
+  max-height: 80px;
 }
+
+
 
 .splide__slide:hover
 {
@@ -159,3 +162,15 @@ main {
   background: rgb(28,28,28);
 }
 
+.splide__list a
+{
+  color: white;
+  text-decoration: none;
+}
+
+/*View content slider*/
+
+//.view-content-slider-btn
+//{
+//  display: none;
+//}

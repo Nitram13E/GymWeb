@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/dashboard.scss">
     <!-- Link to the file hosted on your server, -->
     <link rel="stylesheet" href="JS/splide-4.1.3/dist/css/splide.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -55,84 +55,84 @@
         </div>
     </aside>
     <main class="main-container">
-        <div class="container-actividades"> <!--CONTAINER ACTIVIDADES-->
-            <h1 class="title_primary_carousel">Actividades Deportivas</h1>
-            <section id="carousel-Actividades" class="splide" aria-label="Splide Basic HTML Example">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <div class="splide__slide">
-                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                            <h2 class="title_slider">Slide 1</h2>
-                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
-                        </div>
-                        <div class="splide__slide">
-                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                            <h2 class="title_slider">Slide 2</h2>
-                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
-                        </div>
-                        <div class="splide__slide">
-                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                            <h2 class="title_slider">Slide 3</h2>
-                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
-                        </div>
-                    </ul>
-                </div>
-            </section>
-        </div>
-        <div class="container-clases"> <!--CONTAINER CLASES-->
-            <h1 class="title_primary_carousel">Clases</h1>
-            <section id="carousel-Clases" class="splide" aria-label="Splide Basic HTML Example">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <div class="splide__slide">
-                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                            <h2 class="title_slider">Slide 1</h2>
-                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
-                        </div>
-                        <div class="splide__slide">
-                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                            <h2 class="title_slider">Slide 2</h2>
-                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
-                        </div>
-                        <div class="splide__slide">
-                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                            <h2 class="title_slider">Slide 3</h2>
-                            <p class="description_slider">Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet Lorem Impsum dolor sit amet</p>
-                        </div>
-                    </ul>
-                </div>
-            </section>
-        </div>
+        <c:if test="${sessionScope.esProfesor == true}">
+            <div class="container-actividades"> <!--CONTAINER ACTIVIDADES-->
+                <h1 class="title_primary_carousel">Actividades Deportivas</h1>
+                <section id="carousel-Actividades" class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <c:forEach begin="0" end="${actividadesProfesor.size() - 1}" var="i">
+                                <div class="splide__slide">
+                                    <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                                    <h2 class="title_slider">${actividadesProfesor[i].getNombre()}</h2>
+                                    <p class="description_slider">${actividadesProfesor[i].getDescripcion()}</p>
+                                    <a href=""><button class="view-content-slider-btn" type="button">Ver info</button></a>
+                                </div>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </c:if>
+
+        <c:if test="${sessionScope.esProfesor == false}">
+            <div class="container-clases"> <!--CONTAINER CLASES-->
+                <h1 class="title_primary_carousel">Clases</h1>
+                <section id="carousel-Clases" class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <c:forEach begin="0" end="${clasesSocio.size() - 1}" var="i">
+                                <div class="splide__slide">
+                                    <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                                    <h2 class="title_slider">${clasesSocio[i].getNombre()}</h2>
+                                    <p class="description_slider">${clasesSocio[i].getUrl()}</p>
+                                    <a href="ConsultaClase?nombreClase=${clasesSocio[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver info</button></a>
+                                </div>
+                            </c:forEach>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </c:if>
     </main>
 </div>
 <%--Splide library--%>
 <script src="JS/splide-4.1.3/dist/js/splide.min.js"></script>
 
 <script>
-    const splideAct = new Splide( '#carousel-Actividades', {
-        type   : 'loop',
-        drag   : 'free',
-        focus  : 'center',
-        snap: true,
-        perPage: 3,
-        autoScroll: {
-            speed: 1,
-        },
-    } );
 
-    const splideClases = new Splide( '#carousel-Clases', {
-        type   : 'loop',
-        drag   : 'free',
-        focus  : 'center',
-        snap: true,
-        perPage: 3,
-        autoScroll: {
-            speed: 1,
-        },
-    } );
+    if(document.getElementById("carousel-Actividades"))
+    {
+        const splideAct = new Splide( '#carousel-Actividades', {
+            type   : 'loop',
+            drag   : 'free',
+            focus  : 'center',
+            snap: true,
+            perPage: 3,
+            autoScroll: {
+                speed: 1,
+            },
+        } );
 
-    splideAct.mount();
-    splideClases.mount();
+        if(splideAct) splideAct.mount();
+    }
+
+    if(document.getElementById("carousel-Clases"))
+    {
+        const splideClases = new Splide( '#carousel-Clases', {
+            type   : 'loop',
+            drag   : 'free',
+            focus  : 'center',
+            snap: true,
+            perPage: 3,
+            autoScroll: {
+                speed: 1,
+            },
+        } );
+
+        if(splideClases) splideClases.mount();
+    }
+
 </script>
 
 <script src="JS/app.js"></script>

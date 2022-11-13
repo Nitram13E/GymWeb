@@ -21,33 +21,23 @@ public class ConsultaUsuario extends HttpServlet {
         //Si es profesor traemos las actividades y las clases asociadas a esa actividad
         if(esProfesor)
         {
-            DtProfesor profesor = (DtProfesor) usuario;
+            try {
+                DtProfesor profesor = (DtProfesor) usuario;
 
-            //Traer actividades de la institucion
-            List<DtActividadDeportiva> actividadesInst = PublicadorInstitucionDeportiva.getActividadesDeInstitucion(profesor.getInstitucion()).getItem();
+                //Traer actividades del profesor que esta logueado
+                List<DtActividadDeportiva> actividadesProfesor = PublicadorActividadDeportiva.getActividadesDeportivasProfesor(profesor).getItem();
 
-            //Lista resultado clases
-            List<DtActividadDeportiva> actividadesResultado = new ArrayList<>();
+                //Traer las clases de cada actividad deportiva
 
-            for (DtActividadDeportiva actividad : actividadesInst) {
+                //Set info profesor to front end
+                request.setAttribute("infoUsuario", profesor);
+                //Set actividades to show in carousel
+                request.setAttribute("actividadesProfesor", actividadesProfesor);
 
-                //Clases de actividad de la institucion
-                List<DtClase> clasesActividad = PublicadorActividadDeportiva.getClases(actividad).getItem();
+            } catch (UsuarioNoExisteException_Exception e) {
 
-                DtClaseArray claseArray = new DtClaseArray();
-                claseArray.getItem().addAll(clasesActividad);
-
-                //Trear las clases del profesor
-                List<DtClase> clasesProfesor = PublicadorUsuario.getClasesProfesor(claseArray, profesor).getItem();
-
-                if(!clasesProfesor.isEmpty())
-                {
-                    actividadesResultado.add(actividad);
-                }
+                throw new RuntimeException(e);
             }
-
-            request.setAttribute("infoUsuario", profesor);
-            request.setAttribute("actividadesProfesor", actividadesResultado);
 
         }
         //Si es socio entonces traemos las clases a las que se registro
