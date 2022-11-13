@@ -55,7 +55,7 @@
         </div>
     </aside>
     <main class="main-container">
-        <c:if test="${sessionScope.esProfesor == true}">
+        <c:if test="${sessionScope.esProfesor == true && ((actividadesProfesor != null) && (!actividadesProfesor.isEmpty()))}">
             <div class="container-actividades"> <!--CONTAINER ACTIVIDADES-->
                 <h1 class="title_primary_carousel">Actividades Deportivas</h1>
                 <section id="carousel-Actividades" class="splide" aria-label="Splide Basic HTML Example">
@@ -66,7 +66,8 @@
                                     <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
                                     <h2 class="title_slider">${actividadesProfesor[i].getNombre()}</h2>
                                     <p class="description_slider">${actividadesProfesor[i].getDescripcion()}</p>
-                                    <a href=""><button class="view-content-slider-btn" type="button">Ver info</button></a>
+                                    <a href="ConsultaActividadDeportiva?actividadDeportiva=${actividadesProfesor[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver info</button></a>
+                                    <a href="ConsultaUsuario?actividadDeportiva=${actividadesProfesor[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver clase</button></a>
                                 </div>
                             </c:forEach>
                         </ul>
@@ -75,24 +76,43 @@
             </div>
         </c:if>
 
-        <c:if test="${sessionScope.esProfesor == false}">
+        <c:if test="${clasesActividad != null || clasesSocio != null}">
             <div class="container-clases"> <!--CONTAINER CLASES-->
                 <h1 class="title_primary_carousel">Clases</h1>
                 <section id="carousel-Clases" class="splide" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            <c:forEach begin="0" end="${clasesSocio.size() - 1}" var="i">
-                                <div class="splide__slide">
-                                    <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                                    <h2 class="title_slider">${clasesSocio[i].getNombre()}</h2>
-                                    <p class="description_slider">${clasesSocio[i].getUrl()}</p>
-                                    <a href="ConsultaClase?nombreClase=${clasesSocio[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver info</button></a>
-                                </div>
-                            </c:forEach>
+                            <!--Clases socio-->
+                            <c:if test="${clasesSocio != null}">
+                                <c:forEach begin="0" end="${clasesSocio.size() - 1}" var="i">
+                                    <div class="splide__slide">
+                                        <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                                        <h2 class="title_slider">${clasesSocio[i].getNombre()}</h2>
+                                        <p class="description_slider">${clasesSocio[i].getUrl()}</p>
+                                        <a href="ConsultaClase?nombreClase=${clasesSocio[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver info</button></a>
+                                    </div>
+                                </c:forEach>
+                            </c:if>
+
+                            <!--Actividad profesor-->
+                            <c:if test="${clasesActividad != null}">
+                                <c:forEach begin="0" end="${clasesActividad.size() - 1}" var="i">
+                                    <div class="splide__slide">
+                                        <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                                        <h2 class="title_slider">${clasesActividad[i].getNombre()}</h2>
+                                        <p class="description_slider">${clasesActividad[i].getUrl()}</p>
+                                        <a href="ConsultaClase?nombreClase=${clasesActividad[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver info</button></a>
+                                    </div>
+                                </c:forEach>
+                            </c:if>
                         </ul>
                     </div>
                 </section>
             </div>
+        </c:if>
+
+        <c:if test="${clasesActividad == null && clasesSocio == null}">
+            <h1 id="#empty-message-act-clase">No se encontraron Actividades o clases asociadas!</h1>
         </c:if>
     </main>
 </div>

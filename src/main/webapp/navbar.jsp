@@ -8,10 +8,7 @@
             <c:if test="${sessionScope.usuario != null}">
                 <c:if test="${sessionScope.esProfesor == true}">
                     <li class="nav-item">
-                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="actividades_deportivas.jsp">Actividades Deportivas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white text-decoration-none" href="clases.jsp" >Clases</a>
+                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="ConsultaActividadDeportiva">Actividades Deportivas</a>
                     </li>
                 </c:if>
                 <li class="nav-item dropdown">
