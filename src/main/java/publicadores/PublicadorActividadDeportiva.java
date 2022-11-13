@@ -13,9 +13,21 @@ public class PublicadorActividadDeportiva {
         return service.getClases(dtActividadDeportiva);
     }
 
-    public DtActividadDeportivaArray getActividadesDeportivasProfesor(DtProfesor dtProfesor) throws UsuarioNoExisteException_Exception {
+    public static DtActividadDeportivaArray getActividadesDeportivasProfesor(DtProfesor dtProfesor) throws UsuarioNoExisteException_Exception {
         publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
 
         return service.getActividadesDeportivasProfesor(dtProfesor);
+    }
+
+    public static DtActividadDeportiva buscarActividadDeportiva(String nombre) {
+        publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
+
+        return service.buscarActividadDeportiva(nombre);
+    }
+
+    public static DtActividadDeportivaArray getActividadesRanking() {
+        publicadores.ControladorPublishActividadDeportiva service = new ControladorPublishActividadDeportivaService().getControladorPublishActividadDeportivaPort();
+
+        return service.getActividadesRanking();
     }
 }

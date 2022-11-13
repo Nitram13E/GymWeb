@@ -26,6 +26,16 @@ public interface ControladorPublishInstitucionDeportiva {
 
     /**
      * 
+     * @return
+     *     returns publicadores.DtInstitucionDeportivaArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishInstitucionDeportiva/getInstitucionesDeportivasRequest", output = "http://Publicadores/ControladorPublishInstitucionDeportiva/getInstitucionesDeportivasResponse")
+    public DtInstitucionDeportivaArray getInstitucionesDeportivas();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns publicadores.DtActividadDeportivaArray
@@ -36,15 +46,5 @@ public interface ControladorPublishInstitucionDeportiva {
     public DtActividadDeportivaArray getActividadesDeInstitucion(
         @WebParam(name = "arg0", partName = "arg0")
         DtInstitucionDeportiva arg0);
-
-    /**
-     * 
-     * @return
-     *     returns publicadores.DtInstitucionDeportivaArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishInstitucionDeportiva/getInstitucionesDeportivasRequest", output = "http://Publicadores/ControladorPublishInstitucionDeportiva/getInstitucionesDeportivasResponse")
-    public DtInstitucionDeportivaArray getInstitucionesDeportivas();
 
 }

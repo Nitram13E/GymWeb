@@ -4,15 +4,21 @@
 <xsd:import namespace="http://Publicadores/" schemaLocation="http://127.0.0.1:1927/controladorActividadDeportiva?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="buscarActividadDeportiva">
+<part name="arg0" type="xsd:string"/>
+</message>
+<message name="buscarActividadDeportivaResponse">
+<part name="return" type="tns:dtActividadDeportiva"/>
+</message>
+<message name="getActividadesRanking"/>
+<message name="getActividadesRankingResponse">
+<part name="return" type="tns:dtActividadDeportivaArray"/>
+</message>
 <message name="getClases">
 <part name="arg0" type="tns:dtActividadDeportiva"/>
 </message>
 <message name="getClasesResponse">
 <part name="return" type="tns:dtClaseArray"/>
-</message>
-<message name="getActividadesDeportivas"/>
-<message name="getActividadesDeportivasResponse">
-<part name="return" type="tns:dtActividadDeportivaArray"/>
 </message>
 <message name="getActividadesDeportivasProfesor">
 <part name="arg0" type="tns:dtProfesor"/>
@@ -23,24 +29,36 @@
 <message name="UsuarioNoExisteException">
 <part name="fault" element="tns:UsuarioNoExisteException"/>
 </message>
+<message name="getActividadesDeportivas"/>
+<message name="getActividadesDeportivasResponse">
+<part name="return" type="tns:dtActividadDeportivaArray"/>
+</message>
 <portType name="ControladorPublishActividadDeportiva">
+<operation name="buscarActividadDeportiva">
+<input wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/buscarActividadDeportivaRequest" message="tns:buscarActividadDeportiva"/>
+<output wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/buscarActividadDeportivaResponse" message="tns:buscarActividadDeportivaResponse"/>
+</operation>
+<operation name="getActividadesRanking">
+<input wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesRankingRequest" message="tns:getActividadesRanking"/>
+<output wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesRankingResponse" message="tns:getActividadesRankingResponse"/>
+</operation>
 <operation name="getClases">
 <input wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getClasesRequest" message="tns:getClases"/>
 <output wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getClasesResponse" message="tns:getClasesResponse"/>
-</operation>
-<operation name="getActividadesDeportivas">
-<input wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasRequest" message="tns:getActividadesDeportivas"/>
-<output wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasResponse" message="tns:getActividadesDeportivasResponse"/>
 </operation>
 <operation name="getActividadesDeportivasProfesor">
 <input wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasProfesorRequest" message="tns:getActividadesDeportivasProfesor"/>
 <output wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasProfesorResponse" message="tns:getActividadesDeportivasProfesorResponse"/>
 <fault message="tns:UsuarioNoExisteException" name="UsuarioNoExisteException" wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasProfesor/Fault/UsuarioNoExisteException"/>
 </operation>
+<operation name="getActividadesDeportivas">
+<input wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasRequest" message="tns:getActividadesDeportivas"/>
+<output wsam:Action="http://Publicadores/ControladorPublishActividadDeportiva/getActividadesDeportivasResponse" message="tns:getActividadesDeportivasResponse"/>
+</operation>
 </portType>
 <binding name="ControladorPublishActividadDeportivaPortBinding" type="tns:ControladorPublishActividadDeportiva">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
-<operation name="getClases">
+<operation name="buscarActividadDeportiva">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal" namespace="http://Publicadores/"/>
@@ -49,7 +67,16 @@
 <soap:body use="literal" namespace="http://Publicadores/"/>
 </output>
 </operation>
-<operation name="getActividadesDeportivas">
+<operation name="getActividadesRanking">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</input>
+<output>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</output>
+</operation>
+<operation name="getClases">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal" namespace="http://Publicadores/"/>
@@ -69,6 +96,15 @@
 <fault name="UsuarioNoExisteException">
 <soap:fault name="UsuarioNoExisteException" use="literal"/>
 </fault>
+</operation>
+<operation name="getActividadesDeportivas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</input>
+<output>
+<soap:body use="literal" namespace="http://Publicadores/"/>
+</output>
 </operation>
 </binding>
 <service name="ControladorPublishActividadDeportivaService">

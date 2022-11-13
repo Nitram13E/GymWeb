@@ -1,6 +1,5 @@
 package servlets;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,8 +26,7 @@ public class ConsultaClase extends HttpServlet {
 
         request.setAttribute("registros", registros);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/clases.jsp");
-        requestDispatcher.forward(request, response);
+        request.getRequestDispatcher("/clases.jsp").forward(request, response);
     }
 
     @Override
