@@ -16,6 +16,8 @@ public class ConsultaUsuario extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DtUsuario usuario = (DtUsuario) request.getSession().getAttribute("usuario");
         Boolean esProfesor = (Boolean) request.getSession().getAttribute("esProfesor");
+        String nombreActividad = request.getParameter("actividadDeportiva");
+
         if(usuario == null || esProfesor == null) response.sendRedirect("index.jsp");
 
         //Si es profesor traemos las actividades y las clases asociadas a esa actividad
@@ -27,12 +29,30 @@ public class ConsultaUsuario extends HttpServlet {
                 //Traer actividades del profesor que esta logueado
                 List<DtActividadDeportiva> actividadesProfesor = PublicadorActividadDeportiva.getActividadesDeportivasProfesor(profesor).getItem();
 
-                //Traer las clases de cada actividad deportiva
-
                 //Set info profesor to front end
                 request.setAttribute("infoUsuario", profesor);
                 //Set actividades to show in carousel
                 request.setAttribute("actividadesProfesor", actividadesProfesor);
+
+                if(!actividadesProfesor.isEmpty())
+                {
+                    //Cargar clases de la primer actividad por defecto una vez que se entra en el dashboard
+                    if(nombreActividad == null)
+                    {
+                        List<DtClase> clasesActividad = PublicadorActividadDeportiva.getClases(actividadesProfesor.get(0)).getItem();
+
+                        request.setAttribute("clasesActividad", clasesActividad);
+                    }
+                    else
+                    {
+                        DtActividadDeportiva actividad = PublicadorActividadDeportiva.buscarActividadDeportiva(nombreActividad);
+
+                        List<DtClase> clasesActividad = PublicadorActividadDeportiva.getClases(actividad).getItem();
+
+                        request.setAttribute("clasesActividad", clasesActividad);
+                    }
+                }
+
 
             } catch (UsuarioNoExisteException_Exception e) {
 
