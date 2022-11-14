@@ -212,5 +212,34 @@ main {
 }
 
 
+@media (max-width: 600px){
+    .searchAndSelect {
+        width: 100vw;
+        margin-left: 0;
+    }
+    .searchAndSelect input {
+        width: 85vw;
+    }
+    .listaActividades {
+        margin-top: 25px;
+        width: 85vw;
+
+        background-color: #000000;
+        color: white;
+        border: 1px solid white;
+        padding-top: 1vw;
+        border-radius: 8px;
+    }
+    .data {
+        margin-right: 0px;
+        justify-items: center;
+    }
+    main{
+        flex-direction: column;
+    }
+}
+
+
+
 
 

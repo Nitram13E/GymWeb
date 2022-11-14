@@ -183,17 +183,11 @@ body
     height: 40px;
 }
 
-<<<<<<< HEAD
 .img-circle
 {
     border-radius: 50%;
 }
-
 @media screen and (max-width: 600px)
-=======
-@media screen and (max-width:
-        600px)
->>>>>>> 33c9f1e75bd5c5ca8515735911c37b11dfe5bbe0
 {
     .flex
     {
@@ -258,16 +252,10 @@ body
     margin: 0 10%;
 }
 
-.container-info-clase form
+.container-info-clase section
 {
    display: flex;
    gap: 8em;
-}
-
-
-.container-informacion-registro-clase
-{
-
 }
 
 .container-informacion-registro-clase input

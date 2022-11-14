@@ -20,7 +20,7 @@
                 <h1>Clase</h1>
             </div>
             <div class="container-info-clase">
-                <form action="ConsultaClase" method="post">
+                <section>
                     <div class="container-informacion-registro-clase">
                         <h1>Informacion</h1>
                         <div class="flex">
@@ -58,7 +58,7 @@
                             </ul>
                         </div>
                     </div>
-                </form>
+                </section>
             </div>
         </div>
     <%--    <jsp:include page="footer.jsp"/>--%>
