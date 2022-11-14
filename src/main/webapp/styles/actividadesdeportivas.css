@@ -183,6 +183,34 @@ main {
     text-decoration: none;
 }
 
+/*BTN AGREGAR CLASE*/
+
+.container-clase-add
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px !important;
+}
+
+.container-clase-add a {
+    display: flex;
+    width: 120px;
+    background: #000;
+    border: 1px solid white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+}
+
+.container-clase-add a:hover {
+    transform: translateY(-2px);
+    transition: .3s;
+    color: white;
+}
+
 
 
 
