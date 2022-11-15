@@ -16,19 +16,16 @@
     <title>Gym Web | Login</title>
 </head>
 <body>
-    <section id="container-login" class="vh-100">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;border:none">
-                        <div class="row g-0">
-                            <div class="col-md-6 col-lg-5 d-none d-md-block">
+    <section id="container-login" class="d-flex flex-column justify-content-center h-100">
+        <div class="container card h-75 d-flex p-0" style="border-radius: 1.5rem;border:none">
+                        <div class="row g-0 h-100">
+                            <div class="col-sm-0 col-lg-5 d-none d-lg-block">
                                 <img src="https://melmagazine.com/wp-content/uploads/2021/01/66f-1.jpg"
                                      alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 100%" />
                             </div>
-                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                <div class="card-body p-4 p-lg-5 text-black">
+                            <div class="col-md-12 col-lg-7 d-flex align-items-center h-100">
                                     <a href="index.jsp"><iconify-icon style="font-size: 30px; position: absolute; right: 30px; top: 30px; color: black" icon="dashicons:arrow-left-alt2"></iconify-icon></a>
+                                <div class="card-body p-4 p-lg-5 text-black">
                                     <form action="IniciarSesion" method="post">
                                         <div class="d-flex align-items-center mb-3 pb-1" style="justify-content: center">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -45,6 +42,7 @@
 
 
                                         </div>
+<div>
 
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; color: black">Ingresar a la cuenta</h5>
 
@@ -59,14 +57,12 @@
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <button id="btn-log-in" class="btn btn-dark btn-lg btn-block" type="submit">Entrar</button>
+                                            <button id="btn-log-in" class="btn btn-dark btn-lg btn-block w-100" type="submit">Entrar</button>
                                         </div>
+</div>
                                     </form>
 
                                 </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

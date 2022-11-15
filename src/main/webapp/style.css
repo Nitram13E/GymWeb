@@ -183,17 +183,12 @@ body
     height: 40px;
 }
 
-<<<<<<< HEAD
 .img-circle
 {
     border-radius: 50%;
 }
 
 @media screen and (max-width: 600px)
-=======
-@media screen and (max-width:
-        600px)
->>>>>>> 33c9f1e75bd5c5ca8515735911c37b11dfe5bbe0
 {
     .flex
     {
