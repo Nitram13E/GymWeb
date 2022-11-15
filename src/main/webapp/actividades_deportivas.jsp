@@ -46,34 +46,38 @@
                 <div class="col">
                     <div class="above-input-positioning nombre">
                         <label for="text-nombre">Nombre</label>
-                        <input type="text" class="form-control" id="actividaddeportiva_nombre" placeholder="Nombre" value="${actividadDeportiva.getNombre()}">
+                        <input disabled type="text" class="form-control" id="actividaddeportiva_nombre" placeholder="Nombre" value="${actividadDeportiva.getNombre()}">
                     </div>
                     <div class="above-input-positioning costo">
                         <label for="text-costo">Costo</label>
-                        <input type="text" class="form-control" id="actividaddeportiva_costo" placeholder="Costo" value="${actividadDeportiva.getCosto()}">
+                        <input disabled type="text" class="form-control" id="actividaddeportiva_costo" placeholder="Costo" value="${actividadDeportiva.getCosto()}">
                     </div>
                 </div>
                 <div class="col">
                     <div class="above-input-positioning duracion">
                         <label for="text-duracion">Duracion</label>
-                        <input type="text" class="form-control" id="actividaddeportiva_duracion" placeholder="Duracion" value="${actividadDeportiva.getDuracion()}">
+                        <input disabled type="text" class="form-control" id="actividaddeportiva_duracion" placeholder="Duracion" value="${actividadDeportiva.getDuracion()}">
                     </div>
                     <div class="above-input-positioning costo">
                         <label for="text-nombre">Fecha</label>
-                        <input type="date" class="form-control" id="actividaddeportiva_fecha" placeholder="Fecha" value="${actividadDeportiva.getFechaReg().toString().substring(0,10)}">
+                        <input disabled type="date" class="form-control" id="actividaddeportiva_fecha" placeholder="Fecha" value="${actividadDeportiva.getFechaReg().toString().substring(0,10)}">
                     </div>
                 </div>
                 <div class="col">
                     <div class="above-input-positioning descripcion">
                         <label for="text-descripcion">Descripcion</label>
-                        <textarea class="form-control" id="actividaddeportiva_descripcion" placeholder="Descripcion">${actividadDeportiva.getDescripcion()}</textarea>
+                        <textarea disabled class="form-control" id="actividaddeportiva_descripcion" placeholder="Descripcion">${actividadDeportiva.getDescripcion()}</textarea>
                     </div>
                 </div>
             </div>
 
             <div class="carousel-clases row">
                 <c:if test="${clasesActividad != null}">
-                    <h2>Clases</h2>
+                    <div class="container-clase-add">
+                        <h2>Clases</h2>
+                        <a href="AgregarClase?actividadDeportiva=${actividadDeportiva.getNombre()}">Agregar</a>
+                    </div>
+
                     <section id="carousel-Clases" class="splide" aria-label="Splide Basic HTML Example">
                         <div class="splide__track">
                             <ul class="splide__list">

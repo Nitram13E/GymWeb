@@ -11,6 +11,13 @@
                         <a class="nav-link active text-white text-decoration-none" aria-current="true" href="ConsultaActividadDeportiva">Actividades Deportivas</a>
                     </li>
                 </c:if>
+
+                <c:if test="${sessionScope.esProfesor == false}">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="RegistroClase">Registro a clase</a>
+                    </li>
+                </c:if>
+
                 <li class="nav-item dropdown">
                     <a id="profile-user-icon" class="nav-link dropdown-toggle text-white text-decoration-none" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <c:choose>

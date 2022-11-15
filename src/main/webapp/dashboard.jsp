@@ -111,7 +111,7 @@
             </div>
         </c:if>
 
-        <c:if test="${clasesActividad == null && clasesSocio == null}">
+        <c:if test="${(clasesActividad == null && clasesSocio == null) || (clasesActividad.isEmpty() && clasesSocio.isEmpty())}">
             <h1 id="#empty-message-act-clase">No se encontraron Actividades o clases asociadas!</h1>
         </c:if>
     </main>
