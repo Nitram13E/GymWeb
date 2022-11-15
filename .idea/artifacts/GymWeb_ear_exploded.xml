@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="GymWeb:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/GymWeb_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="GymWeb/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

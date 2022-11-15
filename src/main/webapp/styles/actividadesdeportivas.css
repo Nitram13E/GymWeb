@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;600;700&family=Quicksand:wght@300;500;700&display=swap');
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.form-floating input {
+    color: white;
+    background-color: #000000;
+    border: 1px solid white;
+    border-radius: 8px;
+
+}
+.form-floating input:focus {
+    color: white;
+    background-color: #000000;
+    border: 1px solid white;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.subtitulo {
+    color: #949494;
+}
+
+.container {
+    margin: 0px !important;
+    padding: 0px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    width: 100vw; 
+}
+
+.container-titulo{
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;   /*parece no estar funcionando, revisar*/
+    padding: 1vw;
+    justify-content: center;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+main {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: rgb(20, 20, 20);
+}
+    .searchAndSelect {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 20vw;
+        height: 79vh;
+        padding: 2rem;
+        margin-left: 12vw;
+        border: solid red 1px;
+        background-color: #070707;
+    }
+        .searchAndSelect input {
+            width: 16vw;
+        }
+        .listaActividades {
+            width: 16vw;
+            height: 50vh;
+            background-color: #000000;
+            color: white;
+            border: 1px solid white;
+            padding-top: 1vw;
+            border-radius: 8px;
+        }
+
+.data {
+    display: flex;
+    flex-direction: column;
+    width: 64vw;
+    margin-right: 12vw;
+}
+    .data .subtitulo {
+        justify-content: center;
+        text-align: left;
+        padding-top: 1vw;
+        padding-left: 1vw;
+    }
+    .data .informacion {
+        padding: 1vw;
+        justify-content: space-around;
+    }
+
+    .informacion .col {
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .col input {
+        width: 90%;
+    }
+    /* Description field*/
+
+    .col .descripcion
+    {
+        height: 100%;
+    }
+
+    #actividaddeportiva_descripcion
+    {
+        height: calc(100% - 24px);
+    }
+
+/*-----------Splide JS-----------------*/
+
+.splide
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splide__slide
+{
+    text-align: center;
+    padding: 10px;
+}
+
+.splide__slide .img_slider
+{
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.title_primary_carousel
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.title_slider, .description_slider
+{
+    overflow: hidden;
+}
+
+.description_slider
+{
+    max-height: 80px;
+}
+
+
+
+.splide__slide:hover
+{
+    transform: translateY(-10px);
+    transition: .3s;
+    background: rgb(28,28,28);
+}
+
+.splide__list a
+{
+    color: white;
+    text-decoration: none;
+}
+
+/*BTN AGREGAR CLASE*/
+
+.container-clase-add
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px !important;
+}
+
+.container-clase-add a {
+    display: flex;
+    width: 120px;
+    background: #000;
+    border: 1px solid white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+}
+
+.container-clase-add a:hover {
+    transform: translateY(-2px);
+    transition: .3s;
+    color: white;
+}
+
+
+@media (max-width: 600px){
+    .searchAndSelect {
+        width: 100vw;
+        margin-left: 0;
+    }
+    .searchAndSelect input {
+        width: 85vw;
+    }
+    .listaActividades {
+        margin-top: 25px;
+        width: 85vw;
+
+        background-color: #000000;
+        color: white;
+        border: 1px solid white;
+        padding-top: 1vw;
+        border-radius: 8px;
+    }
+    .data {
+        margin-right: 0px;
+        justify-items: center;
+    }
+    main{
+        flex-direction: column;
+    }
+}
+
+
+
+
+

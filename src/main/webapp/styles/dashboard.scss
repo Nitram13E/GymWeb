@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:900);
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+.main-container {
+  min-width: 78vw;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-container .container-actividades {
+  margin: auto;
+  width: 48vw;
+  height: 20vw;
+  position: relative;
+}
+.main-container .container-clases {
+  margin: auto;
+  width: 48vw;
+  height: 20vw;
+  position: relative;
+}
+
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-size: 1em;
+  background: radial-gradient(#999, #000);
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  margin: 0px !important;
+  padding: 0px !important;
+  display: flex;
+}
+
+aside {
+  width: 28vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgb(28, 28, 28);
+}
+
+aside > div > img {
+  width: 20vw;
+  height: 20vw;
+  padding: 30px;
+  border-radius: 50%;
+}
+
+.info-usuario {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-usuario > h1 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.info-usuario > h4 {
+  color: #EDB97C;
+  font-weight: 700;
+}
+
+.info-usuario > p {
+  font-size: 1rem;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  text-align: justify;
+}
+
+.data-usuario {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.data-usuario > div {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+main {
+  width: 72vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgb(20, 20, 20);
+}
+
+/*-----------Splide JS-----------------*/
+
+.splide
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splide__slide
+{
+  text-align: center;
+  padding: 10px;
+}
+
+.splide__slide .img_slider
+{
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}
+
+.title_primary_carousel
+{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.title_slider, .description_slider
+{
+  overflow: hidden;
+}
+
+.description_slider
+{
+  max-height: 80px;
+}
+
+
+
+.splide__slide:hover
+{
+  transform: translateY(-10px);
+  transition: .3s;
+  background: rgb(28,28,28);
+}
+
+.splide__list a
+{
+  color: white;
+  text-decoration: none;
+}

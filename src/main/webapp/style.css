@@ -1,0 +1,340 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    color: white;
+    font-family: Montserrat, sans-serif;
+}
+
+input
+{
+    background: black;
+}
+
+.widthAuto
+{
+    width: auto !important;
+}
+
+textarea
+{
+    background: black;
+}
+
+body
+{
+    background: black;
+}
+
+.disabled
+{
+    display: none;
+}
+
+/*Background image Home*/
+.back-image-home
+{
+    height: 100vh;
+}
+
+/*LOGIN PAGE*/
+
+#container-login
+{
+    background-color: #000;
+}
+
+#logo-login
+{
+    scale: 0.7;
+}
+
+#btn-log-in
+{
+    width: 30%;
+}
+
+/*----------------------PROFILE INFORMATION----------------------------*/
+.flex
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+}
+.containerProfile
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container-profile-information
+{
+    padding: 0 4%;
+    margin: 60px 0;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+
+/*Logo*/
+
+.profile-logo-information
+{
+    display: flex;
+    gap: 2em;
+}
+
+.profile-data-user
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0.8em;
+}
+
+.profile-logo-information h1
+{
+    font-size: 30px;
+}
+
+.profile-logo-information p
+{
+    font-size: 14px;
+}
+
+.profile-logo-information p:nth-child(3)
+{
+    font-weight: 200;
+}
+
+.profile-logo-information img
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.above-input-positioning
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.user-information-data input
+{
+    width: 240px;
+    text-align: center;
+    height: 40px;
+    background: black;
+    color: white;
+    padding: 10px 4px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.user-information-data textarea
+{
+    width: 240px;
+    height: 80px;
+    resize: none;
+    background: black;
+    color: white;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid white;
+}
+
+.user-information-data #website-user
+{
+    width: 100%;
+}
+
+.user-information-data #birth-user::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    filter: invert(1);
+}
+
+.user-information-data label
+{
+    margin-top: 40px;
+}
+
+/*Btns Form*/
+.container-btns-profile
+{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    gap: 1em;
+    margin: 60px 0;
+}
+
+.container-btns-profile button
+{
+    background: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 140px;
+    height: 40px;
+}
+
+.img-circle
+{
+    border-radius: 50%;
+}
+@media screen and (max-width: 600px)
+{
+    .flex
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .user-information-data label
+    {
+        margin-top: 10px;
+    }
+
+    .user-information-data #website-user
+    {
+        width: 240px;
+    }
+
+    #profile-form
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-information-data
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*--------------CLASES PAGE--------------------*/
+
+.container-clases
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container-title
+{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.container-info-clase
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 10%;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    margin: 0 10%;
+}
+
+.container-info-clase section
+{
+   display: flex;
+   gap: 8em;
+}
+
+.container-informacion-registro-clase input
+{
+    width: 240px;
+    text-align: center;
+    height: 40px;
+    background: black;
+    color: white;
+    padding: 10px 4px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.container-informacion-registro-clase label
+{
+    margin-top: 10px;
+}
+
+.container-informacion-registro-clase #fecha-inicio-clase::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    filter: invert(1);
+}
+
+.container-informacion-registro-clase #fecha-registro-clase::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    filter: invert(1);
+}
+
+.container-lista-socios
+{
+    width: 300px;
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#url-registro-clase
+{
+    width: 100%;
+}
+
+
+/*AGREGAR CLASE*/
+
+.container-profile-information #title_clase
+{
+    text-align: center;
+}
+
+#label-upload-img-clase
+{
+    border: 1px solid white;
+    color: white;
+}
+
+/*ACTIVIDADES DEPORTIVAS*/
+
+.container-actividades
+{
+    width: 100%;
+    height: 100%;
+}
+
+.container-actividades .container-title
+{
+    width: auto !important;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin: 0 10%;
+}
+
+.container-info-actividades
+{
+    display: flex;
+    margin: 0 10%;
+}
+
+
+
+
