@@ -7,3 +7,8 @@ $profileUserIcon.addEventListener("click", function()
     $dropDownProfile.classList.toggle("show");
 });
 
+function triggerRegistroClase(elemento)
+{
+    window.location = elemento.value;
+}
+

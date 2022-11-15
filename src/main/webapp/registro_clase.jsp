@@ -25,49 +25,47 @@
     </div>
     <section>
         <div class="container-info-clase">
+            <div>
+                <c:if test="${claseExistente != null}">
+                    <h2>Usted ya se encuentra registrado a la clase: <span style="color: darkred">${claseExistente}</span></h2>
+                </c:if>
+                <div class="container-registrar-clase">
+                    <div>
+                        <h1>Institucion</h1>
+                        <div class="container-lista-socios">
+                            <ul class="list-group">
+                                <c:forEach items = "${instituciones}" var = "institucion">
+                                    <a href="RegistroClase?institucion=${institucion.getNombre()}"><li class="list-group-item">${institucion.getNombre()}</li></a>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="container-registrar-clase">
-                <div class="above-input-positioning">
-                    <label for="select-institucion">Institucion</label>
-                    <select name="" id="select-institucion">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                    </select>
+                    <div>
+                        <h1>Actividad</h1>
+                        <div class="container-lista-socios">
+                            <ul class="list-group">
+                                <c:forEach items = "${actividades}" var = "actividad">
+                                    <a href="RegistroClase?institucion=${sessionScope.institucion.getNombre()}&actividad=${actividad.getNombre()}"><li class="list-group-item">${actividad.getNombre()}</li></a>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1>Clase</h1>
+                        <div class="container-lista-socios">
+                            <ul class="list-group">
+                                <c:forEach items = "${clases}" var = "clase">
+                                    <a href="RegistroClase?institucion=${sessionScope.institucion.getNombre()}&actividad=${actividad.getNombre()}&clase=${clase.getNombre()}"><li class="list-group-item">${clase.getNombre()}</li></a>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="above-input-positioning">
-                    <label for="select-actividadDeportiva">Actividad</label>
-                    <select name="" id="select-actividadDeportiva">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                    </select>
-                </div>
-
-                <div class="above-input-positioning">
-                    <label for="select-clase-act">Clase</label>
-                    <select name="" id="select-clase-act">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                    </select>
-                </div>
-
                 <div class="container-btns-profile">
-                    <form action="ConsultaRegistro" method="post">
+                    <form action="RegistroClase" method="post">
+                        <input style="display: none" type="text" name="nombreClase" value="${sessionScope.clase.getNombre()}">
                         <button type="submit">Registrar</button>
                     </form>
                     <button><a href="index.jsp">Cancelar</a></button>
@@ -105,5 +103,11 @@
 </div>
 <%--    <jsp:include page="footer.jsp"/>--%>
 <script src="JS/app.js"></script>
+<script>
+    function triggerRegistroClase(elemento)
+    {
+        window.location = elemento.value;
+    }
+</script>
 </body>
 </html>

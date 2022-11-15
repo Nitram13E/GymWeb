@@ -14,7 +14,7 @@
 
                 <c:if test="${sessionScope.esProfesor == false}">
                     <li class="nav-item">
-                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="ConsultaRegistro">Registro a clase</a>
+                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="RegistroClase">Registro a clase</a>
                     </li>
                 </c:if>
 
