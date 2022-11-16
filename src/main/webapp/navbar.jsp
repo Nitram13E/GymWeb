@@ -32,6 +32,10 @@
                     <div id="dropdown-profile" class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="ConsultaUsuario">Dashboard</a>
                         <a class="dropdown-item" href="perfil_usuario.jsp">Editar Perfil</a>
+                        <c:if test="${sessionScope.esProfesor == true}">
+                            <a class="dropdown-item" href="Ranking">Ranking</a>
+                        </c:if>
+
                         <div class="dropdown-divider"></div>
                         <form action="CerrarSesion" method="post">
                             <button class="dropdown-item" type="submit">Salir</button>

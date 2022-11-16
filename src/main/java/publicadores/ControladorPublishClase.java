@@ -24,7 +24,6 @@ import javax.xml.ws.FaultAction;
 })
 public interface ControladorPublishClase {
 
-
     /**
      * 
      * @return

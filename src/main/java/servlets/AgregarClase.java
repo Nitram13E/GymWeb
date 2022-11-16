@@ -30,6 +30,7 @@ public class AgregarClase extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DtClase dtClase = new DtClase();
+        String nombreClase = request.getParameter("nombreClase");
         try {
             XMLGregorianCalendar fecha = DatatypeFactory.newInstance().newXMLGregorianCalendar(request.getParameter("fechaClase"));
 
