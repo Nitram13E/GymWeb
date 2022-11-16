@@ -50,7 +50,7 @@
                         <input name="actividadDeportiva" type="text" value="${actividadDeportiva}" style="display: none">
                         <div class="container-btns-profile">
                             <button type="submit">Registrar</button>
-                            <button><a href="index.jsp">Cancelar</a></button>
+                            <a href="index.jsp"><button>Cancelar</button></a>
                         </div>
                     </div>
                 </form>

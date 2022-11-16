@@ -81,14 +81,14 @@
                     <section id="carousel-Clases" class="splide" aria-label="Splide Basic HTML Example">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                    <c:forEach begin="0" end="${clasesActividad.size() - 1}" var="i">
-                                        <div class="splide__slide">
-                                            <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
-                                            <h2 class="title_slider">${clasesActividad[i].getNombre()}</h2>
-                                            <p class="description_slider">${clasesActividad[i].getUrl()}</p>
-                                            <a href="ConsultaClase?nombreClase=${clasesActividad[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver info</button></a>
-                                        </div>
-                                    </c:forEach>
+                                <c:forEach begin="0" end="${clasesActividad.size() - 1}" var="i">
+                                    <div class="splide__slide">
+                                        <img class="img_slider" src="assets/gym1.jpg" alt="Imagen Gym">
+                                        <h2 class="title_slider">${clasesActividad[i].getNombre()}</h2>
+                                        <p class="description_slider">${clasesActividad[i].getUrl()}</p>
+                                        <a href="ConsultaClase?nombreClase=${clasesActividad[i].getNombre()}"><button class="view-content-slider-btn" type="button">Ver info</button></a>
+                                    </div>
+                                </c:forEach>
                             </ul>
                         </div>
                     </section>
