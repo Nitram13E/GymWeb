@@ -75,8 +75,6 @@ main {
         height: 79vh;
         padding: 2rem;
         margin-left: 12vw;
-        border: solid red 1px;
-        background-color: #070707;
     }
         .searchAndSelect input {
             width: 16vw;

@@ -10,6 +10,7 @@ import publicadores.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @WebServlet(name = "ConsultaActividadDeportiva", value = "/ConsultaActividadDeportiva")
 public class ConsultaActividadDeportiva extends HttpServlet {
@@ -51,10 +52,10 @@ public class ConsultaActividadDeportiva extends HttpServlet {
         //Buscar actividades deportivas
         String query = request.getParameter("queryActividad");
         DtProfesor dtProfesor = (DtProfesor) request.getSession().getAttribute("usuario");
-        if(query == null || query == "") response.sendRedirect("ConsultaActividadDeportiva");
+        if(query == null || query.equals("")) response.sendRedirect("ConsultaActividadDeportiva");
         if(dtProfesor == null) response.sendRedirect("ConsultaActividadDeportiva");
 
-        if(query != "" && query != null)
+        if(!Objects.equals(query, "") && query != null)
         {
             List<DtActividadDeportiva> actividades = PublicadorInstitucionDeportiva.getActividadesDeInstitucion(dtProfesor.getInstitucion()).getItem();
             List<DtActividadDeportiva> actividadesBusqueda = new ArrayList<>();

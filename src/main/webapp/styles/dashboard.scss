@@ -54,20 +54,37 @@ body {
   display: flex;
 }
 
-aside {
-  width: 28vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  background-color: rgb(28, 28, 28);
-}
 
-aside > div > img {
-  width: 20vw;
-  height: 20vw;
-  padding: 30px;
-  border-radius: 50%;
+  aside {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    color: white;
+    background-color: rgb(28, 28, 28);
+  }
+
+  aside > div > img {
+    width: 20vw;
+    height: 20vw;
+    padding: 30px;
+    border-radius: 50%;
+  }
+@media screen and (min-width: 1000px){
+  aside {
+    width: 28vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(28, 28, 28);
+  }
+
+  aside > div > img {
+    width: 20vw;
+    height: 20vw;
+    padding: 30px;
+    border-radius: 50%;
+  }
 }
 
 .info-usuario {
