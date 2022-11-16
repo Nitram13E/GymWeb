@@ -89,6 +89,11 @@ body
     border-left: 1px solid white;
 }
 
+#dropdown-profile
+{
+    right: 13px;
+}
+
 /*Logo*/
 
 .profile-logo-information
