@@ -16,12 +16,16 @@
 </message>
 <message name="agregarClase">
 <part name="arg0" type="tns:dtClase"/>
-<part name="arg1" type="tns:dtUsuario"/>
-<part name="arg2" type="xsd:string"/>
+<part name="arg1" type="tns:dtProfesor"/>
+<part name="arg2" type="tns:dtActividadDeportiva"/>
+<part name="arg3" type="xsd:string"/>
 </message>
 <message name="agregarClaseResponse"/>
 <message name="ClaseExistenteException">
 <part name="fault" element="tns:ClaseExistenteException"/>
+</message>
+<message name="ParseException">
+<part name="fault" element="tns:ParseException"/>
 </message>
 <portType name="ControladorPublishClase">
 <operation name="getClasesRanking">
@@ -32,10 +36,11 @@
 <input wsam:Action="http://Publicadores/ControladorPublishClase/buscarClaseRequest" message="tns:buscarClase"/>
 <output wsam:Action="http://Publicadores/ControladorPublishClase/buscarClaseResponse" message="tns:buscarClaseResponse"/>
 </operation>
-<operation name="agregarClase" parameterOrder="arg0 arg1 arg2">
+<operation name="agregarClase" parameterOrder="arg0 arg1 arg2 arg3">
 <input wsam:Action="http://Publicadores/ControladorPublishClase/agregarClaseRequest" message="tns:agregarClase"/>
 <output wsam:Action="http://Publicadores/ControladorPublishClase/agregarClaseResponse" message="tns:agregarClaseResponse"/>
 <fault message="tns:ClaseExistenteException" name="ClaseExistenteException" wsam:Action="http://Publicadores/ControladorPublishClase/agregarClase/Fault/ClaseExistenteException"/>
+<fault message="tns:ParseException" name="ParseException" wsam:Action="http://Publicadores/ControladorPublishClase/agregarClase/Fault/ParseException"/>
 </operation>
 </portType>
 <binding name="ControladorPublishClasePortBinding" type="tns:ControladorPublishClase">
@@ -68,6 +73,9 @@
 </output>
 <fault name="ClaseExistenteException">
 <soap:fault name="ClaseExistenteException" use="literal"/>
+</fault>
+<fault name="ParseException">
+<soap:fault name="ParseException" use="literal"/>
 </fault>
 </operation>
 </binding>

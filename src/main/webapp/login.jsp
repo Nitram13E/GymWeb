@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Shifter
-  Date: 24-Sep-22
-  Time: 19:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -16,19 +10,16 @@
     <title>Gym Web | Login</title>
 </head>
 <body>
-    <section id="container-login" class="vh-100">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col col-xl-10">
-                    <div class="card" style="border-radius: 1rem;border:none">
-                        <div class="row g-0">
-                            <div class="col-md-6 col-lg-5 d-none d-md-block">
+    <section id="container-login" class="d-flex flex-column justify-content-center h-100">
+        <div class="container card h-75 d-flex p-0" style="border-radius: 1.5rem;border:none">
+                        <div class="row g-0 h-100">
+                            <div class="col-sm-0 col-lg-5 d-none d-lg-block">
                                 <img src="https://melmagazine.com/wp-content/uploads/2021/01/66f-1.jpg"
                                      alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 100%" />
                             </div>
-                            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                <div class="card-body p-4 p-lg-5 text-black">
+                            <div class="col-md-12 col-lg-7 d-flex align-items-center h-100">
                                     <a href="index.jsp"><iconify-icon style="font-size: 30px; position: absolute; right: 30px; top: 30px; color: black" icon="dashicons:arrow-left-alt2"></iconify-icon></a>
+                                <div class="card-body p-4 p-lg-5 text-black">
                                     <form action="IniciarSesion" method="post">
                                         <div class="d-flex align-items-center mb-3 pb-1" style="justify-content: center">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -45,9 +36,12 @@
 
 
                                         </div>
+<div>
 
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; color: black">Ingresar a la cuenta</h5>
-
+                                        <c:if test="${requestScope.loginError}">
+                                            <h2 class="error-login-text">Credenciales incorrectas.</h2>
+                                        </c:if>
                                         <div class="form-outline mb-4">
                                             <input name = "email" type="email" id="form2Example17" class="form-control form-control-lg" />
                                             <label class="form-label" for="form2Example17" style="color: black">Email</label>
@@ -59,14 +53,12 @@
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <button id="btn-log-in" class="btn btn-dark btn-lg btn-block" type="submit">Entrar</button>
+                                            <button id="btn-log-in" class="btn btn-dark btn-lg btn-block w-100" type="submit">Entrar</button>
                                         </div>
+</div>
                                     </form>
 
                                 </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

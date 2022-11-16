@@ -7,7 +7,7 @@ public class PublicadorInstitucionDeportiva {
         return service.getActividadesDeInstitucion(dtInstitucionDeportiva);
     }
 
-    public static DtInstitucionDeportivaArray getInstitucionesDeportivas(DtInstitucionDeportiva dtInstitucionDeportiva) {
+    public static DtInstitucionDeportivaArray getInstitucionesDeportivas() {
         publicadores.ControladorPublishInstitucionDeportiva service = new ControladorPublishInstitucionDeportivaService().getControladorPublishInstitucionDeportivaPort();
 
         return service.getInstitucionesDeportivas();

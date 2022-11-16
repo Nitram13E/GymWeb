@@ -27,16 +27,6 @@ public interface ControladorPublishRegistro {
 
     /**
      * 
-     * @return
-     *     returns publicadores.RegistroArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosResponse")
-    public RegistroArray obtenerRegistros();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns publicadores.RegistroArray
@@ -50,42 +40,13 @@ public interface ControladorPublishRegistro {
 
     /**
      * 
-     * @param arg0
      * @return
      *     returns publicadores.RegistroArray
      */
     @WebMethod
     @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse")
-    public RegistroArray getRegistrosClase(
-        @WebParam(name = "arg0", partName = "arg0")
-        DtClase arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns publicadores.DtSocioArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseResponse")
-    public DtSocioArray obtenerSociosClase(
-        @WebParam(name = "arg0", partName = "arg0")
-        DtClase arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns publicadores.DtClaseArray
-     */
-    @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioResponse")
-    public DtClaseArray obtenerClasesSocio(
-        @WebParam(name = "arg0", partName = "arg0")
-        DtSocio arg0);
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerRegistrosResponse")
+    public RegistroArray obtenerRegistros();
 
     /**
      * 
@@ -104,5 +65,44 @@ public interface ControladorPublishRegistro {
         DtSocio arg1)
         throws RegistroExistenteException_Exception
     ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns publicadores.DtSocioArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerSociosClaseResponse")
+    public DtSocioArray obtenerSociosClase(
+        @WebParam(name = "arg0", partName = "arg0")
+        DtClase arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns publicadores.RegistroArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseRequest", output = "http://Publicadores/ControladorPublishRegistro/getRegistrosClaseResponse")
+    public RegistroArray getRegistrosClase(
+        @WebParam(name = "arg0", partName = "arg0")
+        DtClase arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns publicadores.DtClaseArray
+     */
+    @WebMethod
+    @WebResult(partName = "return")
+    @Action(input = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioRequest", output = "http://Publicadores/ControladorPublishRegistro/obtenerClasesSocioResponse")
+    public DtClaseArray obtenerClasesSocio(
+        @WebParam(name = "arg0", partName = "arg0")
+        DtSocio arg0);
 
 }

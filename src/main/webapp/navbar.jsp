@@ -8,26 +8,34 @@
             <c:if test="${sessionScope.usuario != null}">
                 <c:if test="${sessionScope.esProfesor == true}">
                     <li class="nav-item">
-                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="actividades_deportivas.jsp">Actividades Deportivas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white text-decoration-none" href="clases.jsp" >Clases</a>
+                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="ConsultaActividadDeportiva">Actividades Deportivas</a>
                     </li>
                 </c:if>
+
+                <c:if test="${sessionScope.esProfesor == false}">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white text-decoration-none" aria-current="true" href="RegistroClase">Registro a clase</a>
+                    </li>
+                </c:if>
+
                 <li class="nav-item dropdown">
                     <a id="profile-user-icon" class="nav-link dropdown-toggle text-white text-decoration-none" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <c:choose>
                             <c:when test="${sessionScope.urlFoto != null}">
-                                <img src="${sessionScope.urlFoto}" alt="img" width="30" height="30" class="rounded-circl">
+                                <img src="${sessionScope.urlFoto}" alt="img" width="30" height="30" class="img-circle">
                             </c:when>
                             <c:when test="${sessionScope.urlFoto == null}">
-                                <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
+                                <img src="profile-icon.png" width="30" height="30" class="img-circle">
                             </c:when>
                         </c:choose>
                     </a>
                     <div id="dropdown-profile" class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="ConsultaUsuario">Dashboard</a>
                         <a class="dropdown-item" href="perfil_usuario.jsp">Editar Perfil</a>
+                        <c:if test="${sessionScope.esProfesor == true}">
+                            <a class="dropdown-item" href="Ranking">Ranking</a>
+                        </c:if>
+
                         <div class="dropdown-divider"></div>
                         <form action="CerrarSesion" method="post">
                             <button class="dropdown-item" type="submit">Salir</button>

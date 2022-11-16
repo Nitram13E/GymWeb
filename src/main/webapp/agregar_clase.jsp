@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -16,16 +18,16 @@
 
                 <h1 id="title_clase">Registrar Clase</h1>
 
+                <c:if test="${claseExistente != null}">
+                    <br><h2>Ya se ha registrado una clase con este nombre: <span style="color: darkred">${claseExistente}</span></h2>
+                </c:if>
+
                 <form id="profile-form" action="AgregarClase" method="post">
                     <%--User information Data--%>
                     <div class="user-information-data">
-                        <label class="btn btn-default btn-file" id="label-upload-img-clase">
-                            Subir foto <input id="upload-img-clase" name="imgClaseUpload" type="file" style="display: none;" required accept="image/png, image/gif, image/jpeg">
-                        </label>
-
                         <div class="above-input-positioning">
                             <label for="institucion-clase">Institucion</label>
-                            <input class="widthAuto" type="text" name="institucionClase" id="institucion-clase">
+                            <input class="widthAuto" type="text" name="institucionClase" id="institucion-clase" value="${sessionScope.usuario.getInstitucion().getNombre()}" disabled>
                         </div>
 
                         <div class="flex">
@@ -40,7 +42,9 @@
                                 <input type="time" name="horaClase" id="hora-clase">
                             </div>
                         </div>
-
+                        <c:if test="${requestScope.errorAgregar}">
+                            <h2 class="error-login-text">La clase ya existe.</h2>
+                        </c:if>
                         <div class="above-input-positioning">
                             <label for="fecha-clase">Fecha clase</label>
                             <input type="date" name="fechaClase" id="fecha-clase">
@@ -51,9 +55,10 @@
                             <input class="widthAuto" type="text" name="urlClase" id="url-clase">
                         </div>
 
+                        <input name="actividadDeportiva" type="text" value="${actividadDeportiva}" style="display: none">
                         <div class="container-btns-profile">
                             <button type="submit">Registrar</button>
-                            <button><a href="index.jsp">Cancelar</a></button>
+                            <button type="reset"><a href="index.jsp">Cancelar</a></button>
                         </div>
                     </div>
                 </form>
@@ -61,6 +66,6 @@
             </div>
         </section>
 <%--        <jsp:include page="footer.jsp"/>--%>
-        <script src="app.js"></script>
+        <script src="JS/app.js"></script>
     </body>
 </html>

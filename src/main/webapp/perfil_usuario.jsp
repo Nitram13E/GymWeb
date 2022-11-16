@@ -16,24 +16,24 @@
         <jsp:include page="navbar.jsp" />
         <section class="containerProfile">
             <div class="container-profile-information">
-                <%--Logo information--%>
-                <div class="profile-logo-information">
-                    <c:choose>
-                        <c:when test="${sessionScope.urlFoto != null}">
-                            <img src="${sessionScope.urlFoto}" alt="img">
-                        </c:when>
-                        <c:when test="${sessionScope.urlFoto == null}">
-                            <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
-                        </c:when>
-                    </c:choose>
-                    <div class="profile-data-user">
-                        <h1>${sessionScope.usuario.getNickname()}</h1>
-                        <p>${sessionScope.usuario.getMail()}</p>
-                        <p>Cambiar foto de perfil</p>
+                <form id="profile-form" action="ModificarUsuario" method="post" enctype="multipart/form-data">
+                    <%--Logo information--%>
+                    <div class="profile-logo-information">
+                        <c:choose>
+                            <c:when test="${sessionScope.urlFoto != null}">
+                                <img src="${sessionScope.urlFoto}" alt="img">
+                            </c:when>
+                            <c:when test="${sessionScope.urlFoto == null}">
+                                <img src="profile-icon.png" width="30" height="30" class="rounded-circl">
+                            </c:when>
+                        </c:choose>
+                        <div class="profile-data-user">
+                            <h1>${sessionScope.usuario.getNickname()}</h1>
+                            <p>${sessionScope.usuario.getMail()}</p>
+                            <p>Cambiar foto de perfil </p>
+                            <input type="file" accept="image/*" name="fotoPerfil"/>
+                        </div>
                     </div>
-                </div>
-
-                <form id="profile-form" action="ModificarUsuario" method="post">
                     <%--User information Data--%>
                     <div class="user-information-data">
                         <div class="flex">
@@ -56,18 +56,18 @@
                             <div class="flex">
                                 <div class="above-input-positioning">
                                     <label for="desc-user">Descripcion</label>
-                                    <textarea name="descriptionUser" id="desc-user"></textarea>
+                                    <textarea name="descriptionUser" id="desc-user" disabled>${sessionScope.usuario.getDescripcion()}</textarea>
                                 </div>
 
                                 <div class="above-input-positioning">
                                     <label for="bio-user">Biografia</label>
-                                    <textarea name="bioUser" id="bio-user"></textarea>
+                                    <textarea name="bioUser" id="bio-user" disabled>${sessionScope.usuario.getBiografia()}</textarea>
                                 </div>
                             </div>
 
                             <div class="above-input-positioning">
                                 <label for="website-user">Sitio Web</label>
-                                <input type="text" name="websiteUser" id="website-user">
+                                <input type="text" name="websiteUser" id="website-user" value="${sessionScope.usuario.getSitioWeb()}" disabled>
                             </div>
                         </c:if>
                             <div class="container-btns-profile">
@@ -80,6 +80,6 @@
             </div>
         </section>
 <%--        <jsp:include page="footer.jsp"/>--%>
-        <script src="app.js"></script>
+        <script src="JS/app.js"></script>
     </body>
 </html>

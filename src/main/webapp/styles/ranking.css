@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:900);
+/*@import '~mdb-ui-kit/css/mdb.min.css';*/
+
+.main-container {
+    min-width: 100vw;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.main-container .container-actividades {
+    width: 40vw;
+    height: 20vw;
+    position: relative;
+}
+.main-container .container-clases {
+    width: 40vw;
+    height: 20vw;
+    position: relative;
+}
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-size: 1em;
+    background: radial-gradient(#999, #000);
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    margin: 0px !important;
+    padding: 0px !important;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.navbar{
+    width: 100vw;
+}
+
+main {
+    width: 100vw;
+    min-height: 600px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(20, 20, 20);
+    justify-items: center;
+}
+
+label {
+    font-weight: 700;
+    align-self: center;
+}
+
+.splide_clases{
+    justify-self: center;
+
+    heigth: 200px;
+}
+.splide_actividades{
+    justify-self: center;
+
+    heigth: 200px;
+}
+
+.splide__slide img {
+    vertical-align: bottom;
+    width: 200px;
+    height: 200px;
+}
+
+.splide__slide p{
+    justify-items: center;
+}
+
+

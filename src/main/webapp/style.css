@@ -1,3 +1,8 @@
+html, body {
+    min-height: 100%;
+    background-color: rgb(20, 20, 20) !important;
+}
+
 *
 {
     margin: 0;
@@ -45,6 +50,12 @@ body
     background-color: #000;
 }
 
+.error-login-text
+{
+    font-size: 15px;
+    color: #df7272;
+}
+
 #logo-login
 {
     scale: 0.7;
@@ -76,6 +87,11 @@ body
     margin: 60px 0;
     border-right: 1px solid white;
     border-left: 1px solid white;
+}
+
+#dropdown-profile
+{
+    right: 13px;
 }
 
 /*Logo*/
@@ -159,7 +175,6 @@ body
     filter: invert(1);
 }
 
-
 .user-information-data label
 {
     margin-top: 40px;
@@ -184,6 +199,21 @@ body
     height: 40px;
 }
 
+.container-btns-profile a
+{
+    width: auto;
+    height: auto;
+    font-weight: normal;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.img-circle
+{
+    border-radius: 50%;
+}
 @media screen and (max-width: 600px)
 {
     .flex
@@ -249,16 +279,10 @@ body
     margin: 0 10%;
 }
 
-.container-info-clase form
+.container-info-clase section
 {
    display: flex;
    gap: 8em;
-}
-
-
-.container-informacion-registro-clase
-{
-
 }
 
 .container-informacion-registro-clase input
@@ -338,6 +362,14 @@ body
     margin: 0 10%;
 }
 
-
+.view-content-slider-btn {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 3px;
+    border: 1px solid #85abf1;
+    color: #59baff;
+    background: transparent;
+    font-weight: 600 ;
+}
 
 

@@ -38,11 +38,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DtClaseArray }
+     * Create an instance of {@link DtInstitucionDeportivaArray }
      * 
      */
-    public DtClaseArray createDtClaseArray() {
-        return new DtClaseArray();
+    public DtInstitucionDeportivaArray createDtInstitucionDeportivaArray() {
+        return new DtInstitucionDeportivaArray();
+    }
+
+    /**
+     * Create an instance of {@link DtInstitucionDeportiva }
+     * 
+     */
+    public DtInstitucionDeportiva createDtInstitucionDeportiva() {
+        return new DtInstitucionDeportiva();
     }
 
     /**
@@ -51,14 +59,6 @@ public class ObjectFactory {
      */
     public DtActividadDeportiva createDtActividadDeportiva() {
         return new DtActividadDeportiva();
-    }
-
-    /**
-     * Create an instance of {@link DtClase }
-     * 
-     */
-    public DtClase createDtClase() {
-        return new DtClase();
     }
 
 }
