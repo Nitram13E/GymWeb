@@ -23,7 +23,6 @@ import javax.xml.ws.Action;
 })
 public interface ControladorPublishInstitucionDeportiva {
 
-
     /**
      * 
      * @return

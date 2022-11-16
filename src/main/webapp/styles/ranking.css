@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:900);
-@import '~mdb-ui-kit/css/mdb.min.css';
+/*@import '~mdb-ui-kit/css/mdb.min.css';*/
 
 .main-container {
     min-width: 100vw;
@@ -51,16 +51,17 @@ body {
     padding: 0px !important;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 80vw;
 }
 
 .navbar{
-    width: 100vw;   
+    width: 100vw;
 }
 
 main {
     width: 100vw;
-    height: 100vh;
+    min-height: 600px;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     color: white;
@@ -72,3 +73,26 @@ label {
     font-weight: 700;
     align-self: center;
 }
+
+.splide_clases{
+    justify-self: center;
+
+    heigth: 200px;
+}
+.splide_actividades{
+    justify-self: center;
+
+    heigth: 200px;
+}
+
+.splide__slide img {
+    vertical-align: bottom;
+    width: 200px;
+    height: 200px;
+}
+
+.splide__slide p{
+    justify-items: center;
+}
+
+
