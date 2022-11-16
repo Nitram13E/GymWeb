@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -36,7 +37,9 @@
                                 <input type="time" name="horaClase" id="hora-clase">
                             </div>
                         </div>
-
+                        <c:if test="${requestScope.errorAgregar}">
+                            <h2 class="error-login-text">La clase ya existe.</h2>
+                        </c:if>
                         <div class="above-input-positioning">
                             <label for="fecha-clase">Fecha clase</label>
                             <input type="date" name="fechaClase" id="fecha-clase">
@@ -50,7 +53,7 @@
                         <input name="actividadDeportiva" type="text" value="${actividadDeportiva}" style="display: none">
                         <div class="container-btns-profile">
                             <button type="submit">Registrar</button>
-                            <a href="index.jsp"><button>Cancelar</button></a>
+                            <button type="reset"><a href="index.jsp">Cancelar</a></button>
                         </div>
                     </div>
                 </form>

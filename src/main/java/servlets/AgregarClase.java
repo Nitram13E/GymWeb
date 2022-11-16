@@ -20,6 +20,8 @@ import java.util.GregorianCalendar;
 public class AgregarClase extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getParameter("errorAgregar") != null) request.setAttribute("errorAgregar", true);
+
         request.setAttribute("actividadDeportiva", request.getParameter("actividadDeportiva"));
 
         request.getRequestDispatcher("agregar_clase.jsp").forward(request, response);
@@ -48,7 +50,7 @@ public class AgregarClase extends HttpServlet {
             response.sendRedirect("ConsultaActividadDeportiva?actividadDeportiva=" + request.getParameter("actividadDeportiva"));
         }
         catch (DatatypeConfigurationException | ClaseExistenteException_Exception | ParseException_Exception e) {
-            throw new RuntimeException(e);
+            response.sendRedirect("AgregarClase?actividadDeportiva" + request.getParameter("actividadDeportiva") + "&errorAgregar=" + true);
         }
     }
 

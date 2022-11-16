@@ -199,6 +199,17 @@ body
     height: 40px;
 }
 
+.container-btns-profile a
+{
+    width: auto;
+    height: auto;
+    font-weight: normal;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
 .img-circle
 {
     border-radius: 50%;
