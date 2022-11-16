@@ -3,23 +3,8 @@
 
 .main-container {
   min-width: 78vw;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-.main-container .container-actividades {
-  margin: auto;
-  width: 48vw;
-  height: 20vw;
-  position: relative;
-}
-.main-container .container-clases {
-  margin: auto;
-  width: 48vw;
-  height: 20vw;
-  position: relative;
+  color: white;
+  background-color: rgb(20, 20, 20);
 }
 
 * {
@@ -28,13 +13,9 @@
   margin: 0;
 }
 
-html, body {
-  min-height: 100%;
-}
 
 body {
   font-size: 1em;
-  background: radial-gradient(#999, #000);
   font-family: "Roboto", sans-serif;
   font-weight: 900;
 }
@@ -54,23 +35,22 @@ body {
   display: flex;
 }
 
-
-  aside {
+  #datos-usuario {
     width: 100vw;
     height: 20vh;
     display: flex;
     color: white;
     background-color: rgb(28, 28, 28);
+
   }
 
-  aside > div > img {
-    width: 20vw;
-    height: 20vw;
-    padding: 30px;
+  #datos-usuario > img {
+    width: auto;
+    height:70%;
     border-radius: 50%;
   }
-@media screen and (min-width: 1000px){
-  aside {
+@media screen and (min-width: 992px){
+  #datos-usuario {
     width: 28vw;
     height: 100vh;
     display: flex;
@@ -79,58 +59,13 @@ body {
     background-color: rgb(28, 28, 28);
   }
 
-  aside > div > img {
-    width: 20vw;
-    height: 20vw;
-    padding: 30px;
+  #datos-usuario > img {
+    width: 100%;
+    height: auto;
     border-radius: 50%;
   }
 }
 
-.info-usuario {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.info-usuario > h1 {
-  color: #ffffff;
-  font-weight: 700;
-}
-
-.info-usuario > h4 {
-  color: #EDB97C;
-  font-weight: 700;
-}
-
-.info-usuario > p {
-  font-size: 1rem;
-  padding-left: 4vw;
-  padding-right: 4vw;
-  text-align: justify;
-}
-
-.data-usuario {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.data-usuario > div {
-  padding-left: 2vw;
-  padding-right: 2vw;
-}
-
-main {
-  width: 72vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  background-color: rgb(20, 20, 20);
-}
 
 /*-----------Splide JS-----------------*/
 

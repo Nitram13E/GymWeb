@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Shifter
-  Date: 24-Sep-22
-  Time: 19:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -45,7 +39,9 @@
 <div>
 
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; color: black">Ingresar a la cuenta</h5>
-
+                                        <c:if test="${requestScope.loginError}">
+                                            <h2 class="error-login-text">Credenciales incorrectas.</h2>
+                                        </c:if>
                                         <div class="form-outline mb-4">
                                             <input name = "email" type="email" id="form2Example17" class="form-control form-control-lg" />
                                             <label class="form-label" for="form2Example17" style="color: black">Email</label>

@@ -15,7 +15,9 @@ import java.util.List;
 public class IniciarSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getParameter("loginError").equals("true")) request.setAttribute("loginError", true);
 
+        request.getRequestDispatcher("login.jsp").forward(request,response);
     }
 
     @Override
@@ -36,10 +38,11 @@ public class IniciarSesion extends HttpServlet {
             else {
                 request.getSession().setAttribute("esProfesor", false);
             }
-        } catch (UsuarioNoExisteException_Exception e) {
-            throw new RuntimeException(e);
-        }
 
-        response.sendRedirect("index.jsp");
+            response.sendRedirect("index.jsp");
+
+        } catch (UsuarioNoExisteException_Exception e) {
+            response.sendRedirect("IniciarSesion?loginError=" + true);
+        }
     }
 }

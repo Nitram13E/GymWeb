@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles/dashboard.scss">
+    <link rel="stylesheet" href="./style.css">
     <!-- Link to the file hosted on your server, -->
     <link rel="stylesheet" href="JS/splide-4.1.3/dist/css/splide.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -25,38 +26,34 @@
 </head>
 <body>
 <jsp:include page="navbar.jsp" />
-<div class="container">
-    <aside>
-        <div class="info-usuario">
-            <img src="${sessionScope.urlFoto}" alt="avatar" class="avatar">
-            <h1 class="nickname">${infoUsuario.getNickname()}</h1>
+<div class="d-flex flex-column flex-lg-row">
+    <div id="datos-usuario" class="p-0 m-0 text-center align-items-center gap-2 gap-sm-5">
+        <img src="${sessionScope.urlFoto}" alt="avatar" class="p-2">
+        <div class="d-flex flex-column text-center">
+
+            <span class="fs-1 fw-bold">${infoUsuario.getNickname()}</span>
             <c:if test="${sessionScope.esProfesor == true}">
-                <h4 class="tipo-usuario">Profesor</h4>
+                <p class="fs-4">Profesor</p>
                 <p class="descripcion">${infoUsuario.getDescripcion()}<p>
             </c:if>
-            <c:if test="${sessionScope.esProfesor == false}">
-                <h4 class="tipo-usuario">Socio</h4>
-            </c:if>
-
-            <div class="data-usuario">
-                <div class="container-nombre">
-                    <h5 class="nombre"><strong>Nombre</strong></h5>
-                    <p class="nombre">${infoUsuario.getNombre()}</p>
-                </div>
-                <div class="container-apellido">
-                    <h5 class="apellido"><strong>Apellido</strong></h5>
-                    <p class="apellido">${infoUsuario.getApellido()}</p>
-                </div>
-            </div>
-            <h5 class="email"><strong>Email</strong></h5>
-            <dib class="email-usuario">
-                <p class="email">${infoUsuario.getMail()}</p>
-            </dib>
         </div>
-    </aside>
+            <c:if test="${sessionScope.esProfesor == false}">
+                <span class="fs-4">Socio</span>
+            </c:if>
+        <div class="d-flex gap-sm-3 flex-column flex-md-row flex-lg-column">
+            <div class="d-flex flex-column text-center">
+                <p class="fs-5"><strong>Nombre completo</strong></p>
+                <p class="nombre">${infoUsuario.getNombre()} ${infoUsuario.getApellido()}</p>
+            </div>
+            <div class="d-flex flex-column text-center">
+                <p class="fs-5"><strong>Email</strong></p>
+                <p class="email">${infoUsuario.getMail()}</p>
+            </div>
+        </div>
+    </div>
     <main class="main-container">
         <c:if test="${sessionScope.esProfesor == true && ((actividadesProfesor != null) && (!actividadesProfesor.isEmpty()))}">
-            <div class="container-actividades"> <!--CONTAINER ACTIVIDADES-->
+            <div class="w-100 mt-5"> <!--CONTAINER ACTIVIDADES-->
                 <h1 class="title_primary_carousel">Actividades Deportivas</h1>
                 <section id="carousel-Actividades" class="splide" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">
@@ -77,7 +74,7 @@
         </c:if>
 
         <c:if test="${clasesActividad != null || clasesSocio != null}">
-            <div class="container-clases"> <!--CONTAINER CLASES-->
+            <div class="w-100 mt-2"> <!--CONTAINER CLASES-->
                 <h1 class="title_primary_carousel">Clases</h1>
                 <section id="carousel-Clases" class="splide" aria-label="Splide Basic HTML Example">
                     <div class="splide__track">

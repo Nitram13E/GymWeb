@@ -1,3 +1,8 @@
+html, body {
+    min-height: 100%;
+    background-color: rgb(20, 20, 20) !important;
+}
+
 *
 {
     margin: 0;
@@ -43,6 +48,12 @@ body
 #container-login
 {
     background-color: #000;
+}
+
+.error-login-text
+{
+    font-size: 15px;
+    color: #df7272;
 }
 
 #logo-login
@@ -335,6 +346,14 @@ body
     margin: 0 10%;
 }
 
-
+.view-content-slider-btn {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 3px;
+    border: 1px solid #85abf1;
+    color: #59baff;
+    background: transparent;
+    font-weight: 600 ;
+}
 
 
